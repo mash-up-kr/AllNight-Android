@@ -13,7 +13,7 @@ class BucketItemAdapter (private var itemList : MutableList<DataList>):RecyclerV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BucketItemViewHolder {
         val viewHolder: BucketItemViewHolder
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.search_result_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.bucket_item, parent, false)
         viewHolder = BucketItemViewHolder(view)
 
         return viewHolder

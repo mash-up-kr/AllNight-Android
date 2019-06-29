@@ -22,6 +22,6 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp" android:button="@drawable/mycheck"/>
+                android:layout_marginBottom="16dp" android:button="@drawable/ic_erase_24_normal"/>
 
 </LinearLayout>

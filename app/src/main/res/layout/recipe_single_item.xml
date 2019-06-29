@@ -8,16 +8,17 @@
         android:background="#765959"
         android:layout_marginBottom="31dp"
 >
-    <ImageButton
+    <ImageView
             android:id="@+id/BtnScrap"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_gravity="right"
-            android:background="#d8d8d8"
+            android:src="@drawable/ic_normal"
+            android:scaleType="center"
     />
-    <TextView
+    <ImageView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +26,7 @@
             android:textSize="20sp"
             android:textColor="#ffffff"
             android:layout_marginTop="340dp"
-            android:text="Alchoholic"
+            android:src="@drawable/ic_24"
     />
     <TextView
             android:id="@+id/title"

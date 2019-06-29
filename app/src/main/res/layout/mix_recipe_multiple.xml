@@ -16,34 +16,33 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginRight="16dp"
         >
-            <Button
+            <ImageView
                     android:id="@+id/BtnToHome"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:text="홈"
-                    android:background="#d8d8d8"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_home"
             />
             <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-            <Button
+            <ImageView
                     android:id="@+id/BtnViewMultiple"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:background="#d8d8d8"
-                    android:text="한장"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_more"
 
             />
 
-            <Button
+            <ImageView
                     android:id="@+id/BtnFilter"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:background="#d8d8d8"
                     android:layout_marginLeft="16dp"
-                    android:text="필터"
+                    android:src="@drawable/ic_filter"
             />
 
 
@@ -54,12 +53,12 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cardMultiView"
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="44dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" />
+    ></androidx.recyclerview.widget.RecyclerView>
 
 
 

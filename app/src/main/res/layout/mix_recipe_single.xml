@@ -20,34 +20,36 @@
                 android:layout_marginRight="16dp"
 
         >
-            <Button
+            <ImageView
                     android:id="@+id/BtnToHome"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:text="홈"
-                    android:background="#d8d8d8"
+                    android:src="@drawable/ic_home"
+                    android:scaleType="centerInside"
+
             />
             <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-            <Button
+            <ImageView
                     android:id="@+id/BtnViewMultiple"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:background="#d8d8d8"
-                    android:text="여러개"
+                    android:src="@drawable/ic_more"
+                    android:scaleType="centerInside"
+
 
             />
 
-            <Button
+            <ImageView
                     android:id="@+id/BtnFilter"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:background="#d8d8d8"
                     android:layout_marginLeft="16dp"
-                    android:text="필터"
+                    android:src="@drawable/ic_filter"
+                    android:scaleType="centerInside"
             />
 
 

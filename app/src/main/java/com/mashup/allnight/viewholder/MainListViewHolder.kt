@@ -18,7 +18,6 @@ abstract class MainListViewHolder(itemView: View) : RecyclerView.ViewHolder(item
 
     class MainTodayCocktailViewHolder(itemView: View) : MainListViewHolder(itemView) {
         override fun bind(mainListItem: MainListItem) {
-            itemView.tvMainTodayTitle.text = mainListItem.title
         }
 
     }

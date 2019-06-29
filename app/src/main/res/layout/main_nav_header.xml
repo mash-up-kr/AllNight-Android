@@ -11,16 +11,16 @@
                   android:fitsSystemWindows="false">
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivCloseDrawer"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@android:color/holo_orange_light"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:background="@drawable/ic_erase_24_active"
                 android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
     <!-- drawer header image -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:fitsSystemWindows="true"
-        android:background="@android:color/holo_green_light"/>
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            android:background="#0099CC00"/>
 </LinearLayout>

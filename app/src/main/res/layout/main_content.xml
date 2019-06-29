@@ -17,11 +17,11 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/ivOpenDrawer"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@android:color/holo_orange_light"
-                android:layout_gravity="center_vertical"/>
+                    android:id="@+id/ivOpenDrawer"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/ic_erase_24_active"
+                    android:layout_gravity="center_vertical"/>
 
        </LinearLayout>
 

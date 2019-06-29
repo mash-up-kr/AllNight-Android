@@ -12,15 +12,14 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AllNight">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".DrinkKindActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
-        </activity>
-        <activity android:name=".DrinkKindActivity">
-
         </activity>
         <activity android:name=".BucketActivity">
 

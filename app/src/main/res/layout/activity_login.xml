@@ -8,13 +8,6 @@
         tools:context=".LoginActivity">
 
     <Button
-            android:layout_width="328dp"
-            android:layout_height="52dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/login_button1" android:text="소셜 로그인" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/login_button2" android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"/>
-    <Button
             android:text="소셜 로그인"
             android:layout_width="328dp"
             android:layout_height="52dp"

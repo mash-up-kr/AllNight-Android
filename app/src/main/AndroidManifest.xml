@@ -28,6 +28,8 @@
 
         <activity android:name=".recipeMultipleActivity">
         </activity>
+        <activity android:name=".recipeSingleActivity">
+        </activity> 
 
     </application>
 

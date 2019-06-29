@@ -20,6 +20,7 @@ class DrinkKindActivity : AppCompatActivity() {
 
         var checkedList: ArrayList<DataList> = arrayListOf()
         bucket_button.setOnClickListener{
+            checkedList.clear()
             for(i in 0 until adapter.getItemCount()){
                 if(adapter.getItem(i).checked){
                     checkedList.add(adapter.getItem(i))

@@ -5,35 +5,31 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".BucketActivity">
+        tools:context=".BucketActivity"
+        android:background="@color/backgound">
 
-    <FrameLayout
-            android:layout_width="60dp"
-            android:layout_height="24dp" android:layout_marginTop="40dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="352dp"
-            android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/next_button">
-
-        <TextView
-                android:text="다음"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/next_text" android:textColor="@color/button_text"
-                android:textSize="13sp"/>
-    </FrameLayout>
-    <FrameLayout
-            android:layout_width="60dp"
-            android:layout_height="24dp" android:layout_marginTop="40dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            android:id="@+id/back_button">
-        <TextView
-                android:text="뒤로"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/back_text" android:textColor="@color/button_text"
-                android:textSize="13sp"/>
-    </FrameLayout>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_arrow_front"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp" android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageButton" android:background="#00FFFFFF"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp" android:id="@+id/imageButton5" android:background="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="395dp"
             android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText" android:id="@+id/bucket_item_recyclerview"/>
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" android:id="@+id/bucket_item_recyclerview"/>
+    <ImageView
+            android:layout_width="360dp"
+            android:layout_height="168dp" app:srcCompat="@drawable/img_bucket"
+            android:id="@+id/imageView3" android:layout_marginTop="83dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

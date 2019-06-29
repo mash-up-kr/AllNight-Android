@@ -3,6 +3,7 @@ package com.mashup.allnight
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.mashup.allnight.adapter.RecipeListAdapter
 import kotlinx.android.synthetic.main.mix_recipe_single.*
 
 class recipeSingleActivity : AppCompatActivity() {

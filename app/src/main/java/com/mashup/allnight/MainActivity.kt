@@ -1,5 +1,6 @@
 package com.mashup.allnight
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -55,6 +56,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navHeaderView = mainNavigationView.getHeaderView(0)
         ivOpenDrawer.setOnClickListener { drawerLayout.openDrawer(GravityCompat.END) }
         navHeaderView.ivCloseDrawer.setOnClickListener { drawerLayout.closeDrawer(GravityCompat.END) }
+
+        // set fab listener
+        fabSearch.setOnClickListener {
+            val intent = Intent(this, DrinkKindActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {

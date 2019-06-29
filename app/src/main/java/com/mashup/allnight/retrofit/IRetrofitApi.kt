@@ -14,7 +14,7 @@ interface IRetrofitApi {
     @GET("api/v1/search")
     fun getSearchIngredientListResult(
         @Query("ingredient") name: String
-    ) : Call<String>
+    ) : Call<ArrayList<String>>
 
     @GET("api/v1/search/cocktail")
     fun getSearchCocktailListResult(

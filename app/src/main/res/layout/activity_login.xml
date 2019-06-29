@@ -12,7 +12,7 @@
             android:layout_width="328dp"
             android:layout_height="52dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/login_button2" app:layout_constraintHorizontal_bias="0.506"
+            android:id="@+id/login_button" app:layout_constraintHorizontal_bias="0.506"
             android:layout_marginBottom="40dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
             android:backgroundTint="@color/button_backg"

@@ -12,6 +12,7 @@
             android:layout_height="24dp" android:layout_marginTop="40dp" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
             android:id="@+id/back_button">
+
         <TextView
                 android:text="뒤로"
                 android:layout_width="wrap_content"
@@ -47,14 +48,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/text2"/>
-    <TextView
-            android:text="Skip"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:id="@+id/skip_button" android:textColor="#000000"
-            android:textAlignment="center" android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp" android:layout_marginBottom="55dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
     <FrameLayout
             android:layout_width="60dp"
             android:layout_height="24dp" android:layout_marginTop="40dp" app:layout_constraintTop_toTopOf="parent"
@@ -81,4 +74,17 @@
                 android:id="@+id/search_text" android:textSize="13sp" android:textColor="@color/button_text"
                 app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="395dp"
+            android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText" android:id="@+id/search_item_recyclerview"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:clickable="true" app:srcCompat="@mipmap/ic_launcher_round" android:id="@+id/bucket_button"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="30dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

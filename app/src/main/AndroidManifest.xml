@@ -25,9 +25,6 @@
         <activity android:name=".BucketActivity">
 
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
 
         <activity android:name=".recipeMultipleActivity">
         </activity>

@@ -25,6 +25,11 @@ class SearchResultAdapter (private var itemList : MutableList<DataList>):Recycle
         holder.bind(itemList[position])
     }
 
+    fun setItemList(itemList: MutableList<DataList>) {
+        this.itemList = itemList
+        notifyDataSetChanged()
+    }
+
     fun getItem(position: Int):DataList{
         return itemList[position]
     }

@@ -6,7 +6,11 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
+import com.mashup.allnight.retrofit.RetrofitManager
 import kotlinx.android.synthetic.main.activity_drink_kind.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DrinkKindActivity : AppCompatActivity() {
 
@@ -14,7 +18,7 @@ class DrinkKindActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_kind)
 
-        val adapter = SearchResultAdapter(initItemData())
+        val adapter = SearchResultAdapter(arrayListOf())
         search_item_recyclerview.adapter = adapter
         search_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
@@ -31,35 +35,26 @@ class DrinkKindActivity : AppCompatActivity() {
             nextIntent.putExtra("checked", checkedList)
             startActivity(nextIntent)
         }
-    }
 
-    fun initItemData(): MutableList<DataList> {
+        btnSearch.setOnClickListener {
+            val call = RetrofitManager.IRetrofitApi.getSearchIngredientListResult(editText.text.toString())
+            call.enqueue(object:Callback<ArrayList<String>> {
+                override fun onFailure(call: Call<ArrayList<String>>, t: Throwable) {
+                }
 
-        var itemList: MutableList<DataList> = arrayListOf()
+                override fun onResponse(call: Call<ArrayList<String>>, response: Response<ArrayList<String>>) {
+                    val itemList: MutableList<DataList> = arrayListOf()
+                    response.body()?.let {
+                        for(item in it) {
+                            val item = DataList(item, false)
+                            itemList.add(item)
+                        }
+                    }
 
+                    (search_item_recyclerview.adapter as SearchResultAdapter).setItemList(itemList)
+                }
 
-        var item1 = DataList("SIGNAL", false)
-        var item2 = DataList("I LUV IT", false)
-        var item3 = DataList("All I Wanna Do", false)
-        var item4 = DataList("Merry Me", false)
-        var item5 = DataList("A", false)
-        var item6 = DataList("Hi", false)
-        var item7 = DataList("My Name", false)
-        var item8 = DataList("You", false)
-        var item9 = DataList("Home", false)
-        var item10 = DataList("Hello", false)
-
-        itemList.add(item1)
-        itemList.add(item2)
-        itemList.add(item3)
-        itemList.add(item4)
-        itemList.add(item5)
-        itemList.add(item6)
-        itemList.add(item7)
-        itemList.add(item8)
-        itemList.add(item9)
-        itemList.add(item10)
-
-        return itemList
+            })
+        }
     }
 }

@@ -72,7 +72,7 @@
     <ImageButton
             android:layout_width="24dp"
             android:layout_height="24dp" app:srcCompat="@drawable/ic_find_24_normal"
-            android:id="@+id/imageButton4" android:layout_marginBottom="16dp"
+            android:id="@+id/btnSearch" android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/editText" android:background="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="@+id/editText" android:layout_marginEnd="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

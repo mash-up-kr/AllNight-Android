@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.navigation.NavigationView
 import com.mashup.allnight.adapter.MainListAdapter
+import com.mashup.allnight.dataclass.MainListItem
 import com.mashup.allnight.viewholder.MainListViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_content.*
@@ -27,11 +28,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // add temporary items
         val arrList = ArrayList<MainListItem>()
-        arrList.add(MainListItem(1,"no", "OH MY GOD1"))
-        arrList.add(MainListItem(0,"no", "OH MY GOD2"))
-        arrList.add(MainListItem(0,"no", "OH MY GOD3"))
-        arrList.add(MainListItem(0,"no", "OH MY GOD4"))
-        arrList.add(MainListItem(0,"no", "OH MY GOD5"))
+        arrList.add(MainListItem(1, "no", "OH MY GOD1"))
+        arrList.add(MainListItem(0, "no", "OH MY GOD2"))
+        arrList.add(MainListItem(0, "no", "OH MY GOD3"))
+        arrList.add(MainListItem(0, "no", "OH MY GOD4"))
+        arrList.add(MainListItem(0, "no", "OH MY GOD5"))
 
         // initialize recyclerView
         mainAdapter = MainListAdapter(arrList)

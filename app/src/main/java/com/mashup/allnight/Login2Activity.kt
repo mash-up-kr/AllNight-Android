@@ -15,5 +15,10 @@ class Login2Activity : AppCompatActivity() {
             val intent = Intent(this,DrinkKindActivity::class.java)
             startActivity(intent)
         }
+
+        no_button.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

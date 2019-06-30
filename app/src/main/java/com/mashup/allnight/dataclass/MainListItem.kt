@@ -1,4 +1,4 @@
-package com.mashup.allnight
+package com.mashup.allnight.dataclass
 
 data class MainListItem (
     val viewType: Int,

@@ -34,5 +34,16 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="71dp"
+                android:layout_height="71dp"
+                android:clickable="true"
+                android:scaleType="center"
+                app:fabSize="normal"
+                android:id="@+id/fabSearch"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="30dp"
+                android:src="@drawable/ic_btn_fab_bucket" app:backgroundTint="#00FFFFFF" android:focusable="true"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>

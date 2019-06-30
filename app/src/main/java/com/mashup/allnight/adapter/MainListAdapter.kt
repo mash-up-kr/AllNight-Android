@@ -3,7 +3,7 @@ package com.mashup.allnight.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mashup.allnight.MainListItem
+import com.mashup.allnight.dataclass.MainListItem
 import com.mashup.allnight.R
 import com.mashup.allnight.viewholder.MainListViewHolder
 

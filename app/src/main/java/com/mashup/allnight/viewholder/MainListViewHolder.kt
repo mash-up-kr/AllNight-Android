@@ -2,7 +2,7 @@ package com.mashup.allnight.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.mashup.allnight.MainListItem
+import com.mashup.allnight.dataclass.MainListItem
 import kotlinx.android.synthetic.main.main_list_recommand_item.view.*
 import kotlinx.android.synthetic.main.main_list_today_item.view.*
 

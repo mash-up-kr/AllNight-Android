@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="157dp"
+        android:layout_height="222dp" xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+    <LinearLayout
+            android:id="@+id/layout1"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#765959"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="7dp"
+
+    >
+        <ImageView
+                android:id="@+id/BtnScrap"
+                android:src="@drawable/ic_normal"
+                android:scaleType="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_gravity="right"
+        />
+        <ImageView
+                android:src="@drawable/ic_24"
+                android:scaleType="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="125dp"
+        />
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:layout_marginTop="2dp"
+                android:text="칵테일 이름"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

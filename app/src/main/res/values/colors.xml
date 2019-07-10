@@ -6,4 +6,5 @@
     <color name="button_text">#43b65e</color>
     <color name="button_backg">#d3ba91</color>
     <color name="backgound">#0b0c15</color>
+    <color name="detail_appbar_colorscrim">#b20b0c15</color>
 </resources>

@@ -11,5 +11,7 @@ object RetrofitManager {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val IRetrofitApi = retrofit.create(com.mashup.allnight.retrofit.IRetrofitApi::class.java)
+    fun createApi() : IRetrofitApi {
+        return retrofit.create(com.mashup.allnight.retrofit.IRetrofitApi::class.java)
+    }
 }

@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // set fab listener
         fabSearch.setOnClickListener {
-            val intent = Intent(this, DrinkKindActivity::class.java)
+            val intent = Intent(this, DrinkKindMixSearchActivity::class.java)
             startActivity(intent)
         }
     }

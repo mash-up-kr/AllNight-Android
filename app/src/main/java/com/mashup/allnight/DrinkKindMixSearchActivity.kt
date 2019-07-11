@@ -8,17 +8,14 @@ import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.retrofit.RetrofitManager
 import kotlinx.android.synthetic.main.activity_drink_kind.*
-import kotlinx.android.synthetic.main.activity_login2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.R.string.cancel
-import android.os.Handler
-import kotlinx.android.synthetic.main.activity_drink_kind.view.*
+
 import java.util.*
 
 
-class DrinkKindActivity : AppCompatActivity() {
+class DrinkKindMixSearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +35,7 @@ class DrinkKindActivity : AppCompatActivity() {
                 }
             }
 
-            val nextIntent = Intent(this, BucketActivity::class.java)
+            val nextIntent = Intent(this, BucketMixSearchActivity::class.java)
             nextIntent.putExtra("checked", checkedList)
             startActivity(nextIntent)
         }
@@ -66,12 +63,12 @@ class DrinkKindActivity : AppCompatActivity() {
         }
 
         back_button.setOnClickListener{
-            val intent = Intent(this,Login2Activity::class.java)
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
 
         next_button.setOnClickListener{
-            val intent = Intent(this, BucketActivity::class.java)
+            val intent = Intent(this, BucketMixSearchActivity::class.java)
             startActivity(intent)
         }
 

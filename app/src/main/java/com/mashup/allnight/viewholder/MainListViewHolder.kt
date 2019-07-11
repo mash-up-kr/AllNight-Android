@@ -18,6 +18,9 @@ abstract class MainListViewHolder(itemView: View) : RecyclerView.ViewHolder(item
 
     class MainTodayCocktailViewHolder(itemView: View) : MainListViewHolder(itemView) {
         override fun bind(mainListItem: MainListItem) {
+            itemView.scrap_button.setOnCheckedChangeListener { p0, p1 ->
+                mainListItem.scraped = itemView.scrap_button.isChecked
+            }
         }
 
     }

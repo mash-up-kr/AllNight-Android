@@ -21,8 +21,7 @@ class BucketMixSearchActivity : AppCompatActivity() {
         bucket_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
         back_button_bucket.setOnClickListener{
-            val intent = Intent(this,DrinkKindMixSearchActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         next_button_bucket.setOnClickListener{

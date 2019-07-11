@@ -13,8 +13,13 @@ class recipeSingleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mix_recipe_single)
 
-        BtnToHome.setOnClickListener{
+        BtnToHome_.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        BtnViewMultiple.setOnClickListener{
+            val intent = Intent(this, recipeMultipleActivity::class.java)
             startActivity(intent)
         }
 
@@ -30,7 +35,7 @@ class recipeSingleActivity : AppCompatActivity() {
         list.add(MainListItem(0, "x", "test5"))
         list.add(MainListItem(0, "x", "test6"))
         val adapter = RecipeListAdapter(list)
-        cardView.adapter = adapter
-        cardView.layoutManager = LinearLayoutManager(this)
+        cardView_.adapter = adapter
+        cardView_.layoutManager = LinearLayoutManager(this)
     }
 }

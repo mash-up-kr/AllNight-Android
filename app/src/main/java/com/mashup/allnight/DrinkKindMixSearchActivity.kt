@@ -63,8 +63,7 @@ class DrinkKindMixSearchActivity : AppCompatActivity() {
         }
 
         back_button.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         next_button.setOnClickListener{

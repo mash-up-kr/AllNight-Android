@@ -31,6 +31,10 @@
         </activity>
         <activity android:name=".Login2Activity">
         </activity>
+        <activity android:name=".recipeSingleActivity">
+        </activity>
+        <activity android:name=".recipeMultipleActivity">
+        </activity>
     </application>
 
 </manifest>

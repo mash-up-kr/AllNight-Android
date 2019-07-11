@@ -16,15 +16,15 @@
             android:layout_marginLeft="7dp"
 
     >
-        <ImageView
-                android:id="@+id/BtnScrap"
-                android:src="@drawable/ic_normal"
+        <CheckBox
+            android:id="@+id/BtnScrap"
                 android:scaleType="center"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginRight="6dp"
                 android:layout_gravity="right"
+                android:button="@drawable/myscrap"
         />
         <ImageView
                 android:src="@drawable/ic_24"

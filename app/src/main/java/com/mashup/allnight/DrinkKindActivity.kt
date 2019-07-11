@@ -65,7 +65,6 @@ class DrinkKindActivity : AppCompatActivity() {
         }
 
         back_button.setOnClickListener{
-            val intent = Intent(this,Login2Activity::class.java)
             finish()
         }
 

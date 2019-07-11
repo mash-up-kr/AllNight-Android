@@ -24,7 +24,6 @@ class DrinkKindActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_kind)
 
-
         val adapter = SearchResultAdapter(arrayListOf())
         search_item_recyclerview.adapter = adapter
         search_item_recyclerview.layoutManager = LinearLayoutManager(this)

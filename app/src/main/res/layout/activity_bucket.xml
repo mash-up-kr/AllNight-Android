@@ -12,13 +12,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_arrow_front"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp" android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageButton" android:background="#00FFFFFF"/>
+            app:layout_constraintEnd_toEndOf="parent" android:background="#00FFFFFF"
+            android:id="@+id/next_button_bucket"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_arrow_back"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="40dp" android:id="@+id/imageButton5" android:background="#00FFFFFF"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
+            android:layout_marginTop="40dp" android:background="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            android:id="@+id/back_button_bucket"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="395dp"
             android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"

@@ -1,5 +1,6 @@
 package com.mashup.allnight
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +20,18 @@ class BucketActivity : AppCompatActivity() {
         bucket_item_recyclerview.adapter = adapter
         bucket_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
+        back_button_bucket.setOnClickListener{
+            val intent = Intent(this,DrinkKindActivity::class.java)
+            startActivity(intent)
+        }
+
+        next_button_bucket.setOnClickListener{
+            val intent = Intent(this, recipeSingleActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
 
     fun initItemData(): MutableList<DataList> {
 

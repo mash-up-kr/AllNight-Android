@@ -22,7 +22,7 @@ class BucketActivity : AppCompatActivity() {
 
         back_button_bucket.setOnClickListener{
             val intent = Intent(this,DrinkKindActivity::class.java)
-            startActivity(intent)
+            
         }
 
         next_button_bucket.setOnClickListener{

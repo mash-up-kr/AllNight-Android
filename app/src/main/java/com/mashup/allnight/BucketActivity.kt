@@ -30,9 +30,6 @@ class BucketActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-
-
     fun initItemData(): MutableList<DataList> {
 
         val list = intent.getSerializableExtra("checked") as ArrayList<DataList>?

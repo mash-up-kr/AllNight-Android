@@ -15,13 +15,12 @@
         <activity android:name=".MainActivity">
 
         </activity>
+
         <activity android:name=".DrinkKindActivity">
-
         </activity>
+
         <activity android:name=".BucketActivity">
-
         </activity>
-
 
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -30,11 +29,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".Login2Activity">
-
         </activity>
-        <activity android:name=".DetailActivity">
 
+        <activity android:name=".DetailActivity">
+        </activity>
+
+        <activity android:name=".recipeSingleActivity">
+        </activity>
+
+        <activity android:name=".recipeMultipleActivity">
         </activity>
     </application>
 

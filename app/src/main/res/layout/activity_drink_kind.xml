@@ -62,13 +62,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_arrow_back"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="40dp" android:id="@+id/imageButton2" android:background="#00FFFFFF"
+            android:layout_marginTop="40dp" android:id="@+id/back_button" android:background="#00FFFFFF"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_arrow_front"
+    <Button
+            android:layout_width="23dp"
+            android:layout_height="23dp" app:srcCompat="@drawable/ic_arrow_front"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp" android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageButton3" android:background="#00FFFFFF"/>
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/next_button"
+            android:background="@drawable/mynext"/>
     <ImageButton
             android:layout_width="24dp"
             android:layout_height="24dp" app:srcCompat="@drawable/ic_find_24_normal"

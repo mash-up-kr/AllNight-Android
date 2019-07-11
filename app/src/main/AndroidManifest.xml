@@ -41,6 +41,8 @@
 
         <activity android:name=".recipeMultipleActivity">
         </activity>
+        <activity android:name=".DetailActivity">
+        </activity>
     </application>
 
 </manifest>

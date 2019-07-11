@@ -8,9 +8,15 @@ import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.retrofit.RetrofitManager
 import kotlinx.android.synthetic.main.activity_drink_kind.*
+import kotlinx.android.synthetic.main.activity_login2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.R.string.cancel
+import android.os.Handler
+import kotlinx.android.synthetic.main.activity_drink_kind.view.*
+import java.util.*
+
 
 class DrinkKindActivity : AppCompatActivity() {
 
@@ -23,7 +29,7 @@ class DrinkKindActivity : AppCompatActivity() {
         search_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
         var checkedList: ArrayList<DataList> = arrayListOf()
-        bucket_button.setOnClickListener{
+        next_button.setOnClickListener{
             checkedList.clear()
             for(i in 0 until adapter.getItemCount()){
                 if(adapter.getItem(i).checked){
@@ -35,6 +41,7 @@ class DrinkKindActivity : AppCompatActivity() {
             nextIntent.putExtra("checked", checkedList)
             startActivity(nextIntent)
         }
+
 
         btnSearch.setOnClickListener {
             val call = RetrofitManager.IRetrofitApi.getSearchIngredientListResult(editText.text.toString())
@@ -56,5 +63,15 @@ class DrinkKindActivity : AppCompatActivity() {
 
             })
         }
+
+        back_button.setOnClickListener{
+            finish()
+        }
+
+        next_button.setOnClickListener{
+            val intent = Intent(this, BucketActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

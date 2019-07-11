@@ -12,7 +12,7 @@ abstract class MainListViewHolder(itemView: View) : RecyclerView.ViewHolder(item
 
     class MainRecommendViewHolder(itemView: View) : MainListViewHolder(itemView) {
         override fun bind(mainListItem: MainListItem) {
-            itemView.tvMainRecommendTitle.text = mainListItem.title
+
         }
     }
 

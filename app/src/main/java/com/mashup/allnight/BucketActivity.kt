@@ -21,7 +21,6 @@ class BucketActivity : AppCompatActivity() {
         bucket_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
         back_button_bucket.setOnClickListener{
-            val intent = Intent(this,DrinkKindActivity::class.java)
             finish()
         }
 

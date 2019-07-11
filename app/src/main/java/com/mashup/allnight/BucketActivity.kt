@@ -21,8 +21,7 @@ class BucketActivity : AppCompatActivity() {
         bucket_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
         back_button_bucket.setOnClickListener{
-            val intent = Intent(this,DrinkKindActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         next_button_bucket.setOnClickListener{
@@ -30,9 +29,6 @@ class BucketActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-
-
     fun initItemData(): MutableList<DataList> {
 
         val list = intent.getSerializableExtra("checked") as ArrayList<DataList>?

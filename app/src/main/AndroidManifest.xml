@@ -29,7 +29,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".Login2Activity">
+        </activity>
+
+        <activity android:name=".DetailActivity">
+        </activity>
+
+        <activity android:name=".recipeSingleActivity">
+        </activity>
+
+        <activity android:name=".recipeMultipleActivity">
+        </activity>
+        <activity android:name=".DetailActivity">
         </activity>
     </application>
 

@@ -35,12 +35,6 @@ class RecipeListFilterDialog(context: Context, themeResId: Int, val filterModifi
         }
     }
 
-    // Dialog 외부가 눌려 사라질 때 변경된 필터를 적용
-    override fun setOnCancelListener(listener: DialogInterface.OnCancelListener?) {
-        filterModifiedListener.onFilterModified(selectedALCOHOL, selectedIngrdCnt)
-        super.setOnCancelListener(listener)
-    }
-
     private fun setAllChkBoxOnClkListener(view: View) {
         if (view is ViewGroup) {
             for (child in view.children)

@@ -42,7 +42,8 @@
                 android:textSize="20sp"
                 android:textColor="#ffffff"
                 android:layout_marginTop="2dp"
-                android:text="칵테일 이름"
+                android:text="Bijou"
+                android:fontFamily="@font/adobehebrewbold"
         />
 
     </LinearLayout>

@@ -12,6 +12,7 @@ import com.mashup.allnight.dataclass.MainListItem
 import com.mashup.allnight.viewholder.MainListViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_content.*
+import kotlinx.android.synthetic.main.main_content.view.*
 import kotlinx.android.synthetic.main.main_nav_header.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         initMain()
-
     }
 
     private fun initMain() {
@@ -65,7 +65,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
-        return false
+        when(p0.itemId){
+            R.id.mnuScrap ->{
+                val intent = Intent(this, ScrapSingleActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return true
     }
 
     override fun onBackPressed() {

@@ -12,47 +12,29 @@
             android:layout_marginStart="16dp"
             android:layout_marginRight="16dp"
     >
-
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="16dp"
-
         >
             <ImageView
-                    android:id="@+id/BtnToHome_"
+                    android:id="@+id/BtnToBack"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_home"
-                    android:scaleType="centerInside"
-
-            />
+                    android:src="@drawable/ic_arrow_back"
+                    android:scaleType="centerInside"/>
             <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"/>
-
             <ImageView
                     android:id="@+id/BtnViewMultiple"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_more"
-                    android:scaleType="centerInside"
-
-
-            />
-
-            <ImageView
-                    android:id="@+id/BtnFilter"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginLeft="16dp"
-                    android:src="@drawable/ic_filter"
-                    android:scaleType="centerInside"
-            />
+                    android:scaleType="centerInside"/>
         </LinearLayout>
-
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cardView_"

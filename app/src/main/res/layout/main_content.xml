@@ -28,7 +28,7 @@
                 android:id="@+id/fabSearch"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="30dp"
-                android:src="@drawable/ic_btn_fab_bucket" app:backgroundTint="#00FFFFFF" android:focusable="true"/>
+                android:src="@drawable/ic_btn_fab_mix" app:backgroundTint="#00FFFFFF" android:focusable="true"/>
 
         <!-- Top bar -->
         <LinearLayout

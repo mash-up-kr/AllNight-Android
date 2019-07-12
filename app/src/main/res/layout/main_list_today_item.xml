@@ -6,14 +6,14 @@
                                                    android:layout_height="match_parent" android:background="#00FFFFFF">
 
 
-    <ImageView android:layout_width="157dp"
-               android:layout_height="200dp"
-               android:id="@+id/tvMainTodayTitle"
-               android:height="300dp"
-               android:src="@drawable/img_main_concept" android:background="#0b0c15"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-    />
+    <ImageView
+            android:layout_height="200dp"
+            android:id="@+id/tvMainTodayTitle"
+            android:height="300dp"
+            android:background="@drawable/img_main_concept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="157dp"/>
     <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_normal_"
@@ -33,8 +33,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/name_text" android:textSize="20sp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" android:textColor="#ffffff"
+            android:textColor="#ffffff"
             android:layout_marginStart="7dp" app:layout_constraintStart_toStartOf="@+id/tvMainTodayTitle"
-            android:layout_marginBottom="13dp" app:layout_constraintBottom_toBottomOf="@+id/tvMainTodayTitle"/>
+            android:layout_marginBottom="13dp" app:layout_constraintBottom_toBottomOf="@+id/tvMainTodayTitle"
+            android:fontFamily="@font/adobehebrewbold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

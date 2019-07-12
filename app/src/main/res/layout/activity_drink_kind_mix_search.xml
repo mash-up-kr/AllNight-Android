@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DrinkKindActivity"
+        tools:context=".DrinkKindMixSearchActivity"
         android:background="@color/backgound">
 
     <TextView
@@ -18,13 +18,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="84dp"
             app:layout_constraintTop_toTopOf="parent"
-            android:fontFamily="@font/nanumbarungothicbold"/>
+            android:fontFamily="@font/nanumbarungothicbold"/>/>
     <TextView
             android:text="여러개를 선택하실 수 있습니다."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textSize="14sp"
+            android:textSize="14sp"
             android:textColor="#ffffff"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
             android:layout_marginTop="7dp" app:layout_constraintTop_toBottomOf="@+id/text1"
@@ -42,7 +42,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/text2"
             android:textColor="#ffffff" android:backgroundTint="@color/button_backg" android:textSize="24sp"
-            android:fontFamily="@font/nanumbarungothic"/>
+            android:fontFamily="@font/nanumbarungothic"/>/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="395dp"
             android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"

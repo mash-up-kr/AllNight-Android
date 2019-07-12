@@ -9,7 +9,7 @@
                android:layout_height="406dp"
                android:id="@+id/tvMainTodayTitle"
                android:height="300dp"
-               android:src="@drawable/img_main_concept" android:background="#0b0c15"
+               android:background="@drawable/img_main_concept"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
                android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>

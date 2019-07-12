@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mnuScrap"
-        android:title="스크랩한 레시피"
-        />
-    <group>
+        android:title="스크랩 레시피"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="20sp"/>
+    <!--<group>
         <item
             android:id="@+id/mnuSetting"
             android:title="설정"
@@ -13,5 +14,5 @@
             android:id="@+id/mnuComplain"
             android:title="건의"
             />
-    </group>
+    </group>-->
 </menu>

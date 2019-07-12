@@ -8,7 +8,7 @@
         android:background="#765959"
         android:layout_marginBottom="31dp"
 >
-    <ImageView
+    <CheckBox
             android:id="@+id/BtnScrap"
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -17,6 +17,7 @@
             android:layout_gravity="right"
             android:src="@drawable/ic_normal"
             android:scaleType="center"
+            android:button="@drawable/myscrap"
     />
     <ImageView
 
@@ -33,10 +34,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:textSize="30sp"
+            android:textSize="39sp"
             android:textColor="#ffffff"
             android:layout_marginTop="8dp"
-            android:text="칵테일 이름"
+            android:text="Bijou"
+            android:fontFamily="@font/adobehebrewbold"
     />
 
 </LinearLayout>

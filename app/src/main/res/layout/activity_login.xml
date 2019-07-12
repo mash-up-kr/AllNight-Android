@@ -8,7 +8,7 @@
         tools:context=".LoginActivity" android:background="@color/backgound">
 
     <Button
-            android:text="소셜 로그인"
+            android:text="시작하기"
             android:layout_width="328dp"
             android:layout_height="52dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +16,8 @@
             android:layout_marginBottom="40dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
             android:backgroundTint="@color/button_backg"
-            android:textSize="19sp" android:textColor="#FFFFFF" android:background="@drawable/ic_9_patch"/>
+            android:textSize="19sp" android:textColor="#FFFFFF" android:background="@drawable/ic_9_patch"
+            android:fontFamily="@font/nanumbarungothicbold"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_logo_allnight"

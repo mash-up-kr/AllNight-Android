@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         initMain()
-
     }
 
     private fun initMain() {
@@ -57,8 +56,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navHeaderView = mainNavigationView.getHeaderView(0)
         ivOpenDrawer.setOnClickListener { drawerLayout.openDrawer(GravityCompat.END) }
         navHeaderView.ivCloseDrawer.setOnClickListener { drawerLayout.closeDrawer(GravityCompat.END) }
-
-
 
         // set fab listener
         fabSearch.setOnClickListener {

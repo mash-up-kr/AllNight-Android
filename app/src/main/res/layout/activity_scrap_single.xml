@@ -28,7 +28,6 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"/>
-
             <ImageView
                     android:id="@+id/BtnViewMultiple"
                     android:layout_width="24dp"
@@ -36,7 +35,6 @@
                     android:src="@drawable/ic_more"
                     android:scaleType="centerInside"/>
         </LinearLayout>
-
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cardView_"

@@ -12,6 +12,10 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AllNight"
             android:usesCleartextTraffic="true">
+        <activity android:name=".ScrapMultipleActivity">
+        </activity>
+        <activity android:name=".ScrapSingleActivity">
+        </activity>
         <activity android:name=".DrinkKindMixSearchActivity">
         </activity>
         <activity android:name=".BucketMixSearchActivity">
@@ -31,13 +35,10 @@
         </activity>
         <activity android:name=".Login2Activity">
         </activity>
-
         <activity android:name=".DetailActivity">
         </activity>
-
         <activity android:name=".recipeSingleActivity">
         </activity>
-
         <activity android:name=".recipeMultipleActivity">
         </activity>
         <activity android:name=".DetailActivity">

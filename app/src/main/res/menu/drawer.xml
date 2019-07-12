@@ -3,6 +3,7 @@
     <item
         android:id="@+id/mnuScrap"
         android:title="스크랩 레시피"
+        android:icon="@drawable/ic_active_"
         android:fontFamily="@font/nanumbarungothic"
         android:textSize="20sp"/>
     <!--<group>

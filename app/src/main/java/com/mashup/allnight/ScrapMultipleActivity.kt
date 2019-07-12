@@ -3,24 +3,24 @@ package com.mashup.allnight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.mashup.allnight.adapter.RecipeListAdapter
-import kotlinx.android.synthetic.main.mix_recipe_single.*
+import androidx.recyclerview.widget.GridLayoutManager
+import com.mashup.allnight.adapter.RecipeMultipleListAdapter
+import kotlinx.android.synthetic.main.activity_scrap_multiple.*
 
-class recipeSingleActivity : AppCompatActivity() {
+class ScrapMultipleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mix_recipe_single)
+        setContentView(R.layout.activity_scrap_multiple)
 
-        BtnToHome_.setOnClickListener{
+        BtnToBack.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
-        BtnViewMultiple.setOnClickListener{
-            val intent = Intent(this, recipeMultipleActivity::class.java)
+        BtnViewSingle.setOnClickListener{
+            val intent = Intent(this, ScrapSingleActivity::class.java)
             startActivity(intent)
         }
 
@@ -35,8 +35,8 @@ class recipeSingleActivity : AppCompatActivity() {
         list.add(MainListItem(0, "x", "test4"))
         list.add(MainListItem(0, "x", "test5"))
         list.add(MainListItem(0, "x", "test6"))
-        val adapter = RecipeListAdapter(list)
+        val adapter = RecipeMultipleListAdapter(list)
         cardView_.adapter = adapter
-        cardView_.layoutManager = LinearLayoutManager(this)
+        cardView_.layoutManager = GridLayoutManager(this,2)
     }
 }

@@ -5,22 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.RecipeListAdapter
-import kotlinx.android.synthetic.main.mix_recipe_single.*
+import kotlinx.android.synthetic.main.activity_scrap_single.*
 
-class recipeSingleActivity : AppCompatActivity() {
+class ScrapSingleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mix_recipe_single)
+        setContentView(R.layout.activity_scrap_single)
 
-        BtnToHome_.setOnClickListener{
+        BtnToBack.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
         BtnViewMultiple.setOnClickListener{
-            val intent = Intent(this, recipeMultipleActivity::class.java)
+            val intent = Intent(this, ScrapMultipleActivity::class.java)
             startActivity(intent)
         }
 

@@ -5,9 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.RecipeListAdapter
+import com.mashup.allnight.customview.RecipeListFilterDialog
+import kotlinx.android.synthetic.main.mix_recipe_multiple.*
 import kotlinx.android.synthetic.main.mix_recipe_single.*
+import kotlinx.android.synthetic.main.mix_recipe_single.BtnFilter
+import kotlinx.android.synthetic.main.mix_recipe_single.BtnToHome_
+import kotlinx.android.synthetic.main.mix_recipe_single.cardView_
 
-class recipeSingleActivity : AppCompatActivity() {
+class recipeSingleActivity : AppCompatActivity(),IRecipeListFilterModifiedListener {
+
+    var alcoholMode : RecipeListFilterDialog.Companion.ALCOHOL = RecipeListFilterDialog.Companion.ALCOHOL.ALL
+    var ingrdCount = 3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +33,12 @@ class recipeSingleActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        BtnFilter.setOnClickListener {
+            val dialog = RecipeListFilterDialog(this, R.style.DialogFromBottom, this)
+            dialog.setCheckState(alcoholMode, ingrdCount)
+            dialog.show()
+        }
+
         init()
     }
 
@@ -40,4 +54,11 @@ class recipeSingleActivity : AppCompatActivity() {
         cardView_.adapter = adapter
         cardView_.layoutManager = LinearLayoutManager(this)
     }
+
+    override fun onFilterModified(alcohol: RecipeListFilterDialog.Companion.ALCOHOL, ingrdCount: Int) {
+        this.alcoholMode = alcohol
+        this.ingrdCount = ingrdCount
+        //Todo : Not implemented. 필터 적용 후 새로 고치는 로직 필요
+    }
+
 }

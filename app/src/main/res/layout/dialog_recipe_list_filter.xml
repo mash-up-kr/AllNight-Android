@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_recipe_filter"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#b7b7b7"
+                android:text="FILTER"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:layout_marginTop="15dp"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/chkFilterAll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    style="@style/CheckedTextViewStyle"
+                    android:textSize="12sp"
+                    android:text="ALL"/>
+            <Space android:layout_width="10dp" android:layout_height="match_parent"/>
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/chkFilterNonAlcohol"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    style="@style/CheckedTextViewStyle"
+                    android:textSize="12sp"
+                    android:text="Non-alcohol"/>
+            <Space android:layout_width="10dp" android:layout_height="match_parent"/>
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/chkFilterAlcohol"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    style="@style/CheckedTextViewStyle"
+                    android:textSize="12sp"
+                    android:text="Alcohol"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="22dp"
+                android:background="@color/button_backg"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="재료수"/>
+            <Space android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/chkFilterIngrd3"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    style="@style/CheckedTextViewStyle"
+                    android:textSize="16sp"
+                    android:text="3"/>
+            <Space android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/chkFilterIngrd4"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    style="@style/CheckedTextViewStyle"
+                    android:textSize="16sp"
+                    android:text="4"/>
+            <Space android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/chkFilterIngrd5"
+                    android:layout_width="58dp"
+                    android:layout_height="match_parent"
+                    style="@style/CheckedTextViewStyle"
+                    android:textSize="16sp"
+                    android:text="5+"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/btnFilterApply"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/button_backg"
+            android:gravity="center"
+            android:text="Apply"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="50dp"/>
+
+</LinearLayout>

@@ -18,11 +18,13 @@ import kotlinx.android.synthetic.main.activity_drink_kind.view.*
 import java.util.*
 
 
-class DrinkKindActivity : AppCompatActivity() {
+class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_kind)
+
+        next_button.isClickable = false
 
         val adapter = SearchResultAdapter(arrayListOf())
         search_item_recyclerview.adapter = adapter
@@ -73,5 +75,19 @@ class DrinkKindActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    override fun onResultItemChecked(checked: Boolean){
+        val adapter = SearchResultAdapter(arrayListOf())
+
+        for(i in 0 until adapter.getItemCount()){
+            if(adapter.getItem(i).checked){
+                next_button.isClickable = true
+                break
+            }
+            if(i+1==adapter.getItemCount()){
+                next_button.isClickable = false
+            }
+        }
     }
 }

@@ -2,7 +2,6 @@ package com.mashup.allnight.customview
 
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.view.*
 import android.widget.Checkable
 import androidx.core.view.children
@@ -69,11 +68,11 @@ class RecipeListFilterDialog(context: Context, themeResId: Int, val filterModifi
     fun setCheckState(state: ALCOHOL, count: Int) {
         selectedALCOHOL = state
         selectedIngrdCnt = count
-        setAlchocolCheck(state)
+        setAlcoholCheck(state)
         setIngrdCountCheck(count)
     }
 
-    private fun setAlchocolCheck(state: ALCOHOL) {
+    private fun setAlcoholCheck(state: ALCOHOL) {
         when(state) {
             Companion.ALCOHOL.ALL -> {chkFilterAll.isChecked = true; selectedALCOHOL = Companion.ALCOHOL.ALL }
             Companion.ALCOHOL.ALCOHOL -> {chkFilterAlcohol.isChecked = true; selectedALCOHOL = Companion.ALCOHOL.ALCOHOL}

@@ -7,10 +7,9 @@ import com.mashup.allnight.R
 import com.mashup.allnight.dataclass.DrinkNeedSpecific
 import kotlinx.android.synthetic.main.detail_need_item.view.*
 
-class DrinkDetailAdapter: RecyclerView.Adapter<DrinkDetailAdapter.DrinkViewHolder>(){
-    var items: MutableList<DrinkNeedSpecific> = mutableListOf(DrinkNeedSpecific("사이다",3),
-        DrinkNeedSpecific("물",1)
-    )
+class DrinkDetailAdapter(private var items: ArrayList<DrinkNeedSpecific>): RecyclerView.Adapter<DrinkDetailAdapter.DrinkViewHolder>(){
+    //items.(DrinkNeedSpecific("사이다",3),DrinkNeedSpecific("물",1)
+
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) = DrinkViewHolder(parent)
     override fun getItemCount(): Int = items.size
@@ -29,6 +28,7 @@ class DrinkDetailAdapter: RecyclerView.Adapter<DrinkDetailAdapter.DrinkViewHolde
         LayoutInflater.from(parent.context).inflate(R.layout.detail_need_item, parent,false)){
         var ingredient = itemView.ingredient
         var size = itemView.size
+
     }
 
 }

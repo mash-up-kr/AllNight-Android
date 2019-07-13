@@ -97,10 +97,9 @@
                         android:text="칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다."
                         android:fontFamily="@font/nanumbarungothic"/>
 
-                <View android:layout_marginTop="32dp" style="@style/Divider"/>
             </LinearLayout>
 
-
+            <View style="@style/Divider"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -126,9 +125,10 @@
                         android:textColor="@color/detail_passage"
                         android:fontFamily="@font/nanumbarungothic"/>
 
+
             </LinearLayout>
 
-            <View android:layout_marginBottom="32dp" style="@style/Divider"/>
+            <View style="@style/Divider"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -156,8 +156,8 @@
                 
             </LinearLayout>
 
-            <View android:layout_marginBottom="36dp" style="@style/Divider"/>
-
+            <View style="@style/Divider"/>
+            
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

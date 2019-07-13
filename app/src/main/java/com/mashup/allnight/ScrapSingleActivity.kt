@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.RecipeListAdapter
+import com.mashup.allnight.dataclass.RecipeListItem
 import kotlinx.android.synthetic.main.activity_scrap_single.*
 
 class ScrapSingleActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class ScrapSingleActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        BtnViewMultiple.setOnClickListener{
+        BtnSwitchViewMode.setOnClickListener{
             val intent = Intent(this, ScrapMultipleActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
@@ -28,13 +29,13 @@ class ScrapSingleActivity : AppCompatActivity() {
     }
 
     fun init() {
-        val list = ArrayList<MainListItem>()
-        list.add(MainListItem(0, "x", "test1"))
-        list.add(MainListItem(0, "x", "test2"))
-        list.add(MainListItem(0, "x", "test3"))
-        list.add(MainListItem(0, "x", "test4"))
-        list.add(MainListItem(0, "x", "test5"))
-        list.add(MainListItem(0, "x", "test6"))
+        val list = ArrayList<RecipeListItem>()
+        list.add(RecipeListItem("x", "test1"))
+        list.add(RecipeListItem("x", "test2"))
+        list.add(RecipeListItem("x", "test3"))
+        list.add(RecipeListItem("x", "test4"))
+        list.add(RecipeListItem("x", "test5"))
+        list.add(RecipeListItem("x", "test6"))
         val adapter = RecipeListAdapter(list)
         cardView_.adapter = adapter
         cardView_.layoutManager = LinearLayoutManager(this)

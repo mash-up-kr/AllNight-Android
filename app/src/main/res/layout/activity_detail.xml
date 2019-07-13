@@ -48,6 +48,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/ic_detail_title_circles"/>
+
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -67,12 +68,66 @@
             android:id="@+id/mainContentScrollView"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <TextView
-                android:text="INTRO"
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_marginStart="16dp"
+                      android:layout_marginEnd="16dp"
+                      android:layout_marginTop="37dp"
+
+        >
+            <TextView
+                    android:text="INTRO"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/intro_text"
+                    android:textColor="@color/button_backg"
+                    android:textSize="16.4sp"
+                    android:fontFamily="@font/nanumbarungothicbold"/>
+
+            <TextView
+                    android:id="@+id/intro_passage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16.4sp"
+                    android:textColor="@color/button_backg"
+                    tools:text="칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다."
+                    android:fontFamily="@font/nanumbarungothicbold"/>
+
+        </LinearLayout>
+
+        <View style="@style/Divider"/>
+
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/intro_text"
-                android:textColor="@color/button_backg" android:textSize="16.4sp"
-                android:fontFamily="@font/nanumbarungothicbold"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:text="GLASS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:id="@+id/glass_text"
+                    android:textColor="@color/button_backg"
+                    android:textSize="16.4sp"
+                    android:fontFamily="@font/nanumbarungothicbold"/>
+            <TextView
+                    android:id="@+id/glass_passage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Glass"
+                    android:textSize="16.4sp"
+                    android:textColor="@color/button_backg"
+                    android:fontFamily="@font/nanumbarungothicbold"/>
+
+        </LinearLayout>
+
+        <View android:layout_marginBottom="32dp" style="@style/Divider"/>
+
+
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

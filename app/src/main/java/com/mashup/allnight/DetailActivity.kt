@@ -52,4 +52,8 @@ class DetailActivity : AppCompatActivity() {
 
         return temp_item
     }
+
+    companion object {
+        val COCKTAIL_ID_KEY = "cocktailId"
+    }
 }

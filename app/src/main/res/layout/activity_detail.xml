@@ -48,6 +48,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/ic_detail_title_circles"/>
+
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -67,12 +68,125 @@
             android:id="@+id/mainContentScrollView"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <TextView
-                android:text="INTRO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/intro_text"
-                android:textColor="@color/button_backg" android:textSize="16.4sp"
-                android:fontFamily="@font/nanumbarungothicbold"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:layout_marginStart="16dp"
+                      android:layout_marginEnd="16dp"
+                      android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:layout_marginTop="37dp"
+            >
+                <TextView
+                        android:text="INTRO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/intro_text"
+                        android:textColor="@color/button_backg"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/nanumbarungothicbold"/>
+
+                <TextView
+                        android:id="@+id/intro_passage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/detail_passage"
+                        android:text="칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다."
+                        android:fontFamily="@font/nanumbarungothic"/>
+
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:text="GLASS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:id="@+id/glass_text"
+                        android:textColor="@color/button_backg"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/nanumbarungothicbold"/>
+                <TextView
+                        android:id="@+id/glass_passage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Glass"
+                        android:textSize="16sp"
+                        android:textColor="@color/detail_passage"
+                        android:fontFamily="@font/nanumbarungothic"/>
+
+
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:text="NEED"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="3dp"
+                        android:id="@+id/need_text"
+                        android:textColor="@color/button_backg"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/nanumbarungothicbold"/>
+                
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/need_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                >
+                    <!-- detail_need_item.xml 레이아웃 아이템으로 삽입-->
+                </androidx.recyclerview.widget.RecyclerView>
+                
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+            
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:text="INSTRUCTION"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:id="@+id/instruction_text"
+                        android:textColor="@color/button_backg"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/nanumbarungothicbold"/>
+                <TextView
+                        android:id="@+id/instruction_passage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9.1dp"
+                        android:layout_marginBottom="30.9dp"
+                        android:text="18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오."
+                        android:textSize="16sp"
+                        android:textColor="@color/detail_passage"
+                        android:fontFamily="@font/nanumbarungothic"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

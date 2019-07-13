@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.mashup.allnight.adapter.DrinkDetailAdapter
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
@@ -13,6 +15,9 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         initDetail()
+
+        need_recyclerView.adapter = DrinkDetailAdapter()
+        need_recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     private fun initDetail() {

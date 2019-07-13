@@ -93,13 +93,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:textSize="16sp"
-                        android:textColor="@color/button_backg"
-                        tools:text="칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다."
-                        android:fontFamily="@font/nanumbarungothicbold"/>
+                        android:textColor="@color/detail_passage"
+                        android:text="칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다."
+                        android:fontFamily="@font/nanumbarungothic"/>
 
+                <View android:layout_marginTop="32dp" style="@style/Divider"/>
             </LinearLayout>
 
-            <View android:layout_marginTop="32dp" style="@style/Divider"/>
+
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -122,8 +123,8 @@
                         android:layout_marginTop="18dp"
                         android:text="Glass"
                         android:textSize="16sp"
-                        android:textColor="@color/button_backg"
-                        android:fontFamily="@font/nanumbarungothicbold"/>
+                        android:textColor="@color/detail_passage"
+                        android:fontFamily="@font/nanumbarungothic"/>
 
             </LinearLayout>
 
@@ -139,22 +140,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
+                        android:layout_marginBottom="3dp"
                         android:id="@+id/need_text"
                         android:textColor="@color/button_backg"
                         android:textSize="16sp"
                         android:fontFamily="@font/nanumbarungothicbold"/>
                 
-                <ListView
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/need_recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/need_listview"
-                        android:divider="#313132"
-                        android:dividerHeight="1dp"
                 >
                     <!-- detail_need_item.xml 레이아웃 아이템으로 삽입-->
-                </ListView>
+                </androidx.recyclerview.widget.RecyclerView>
                 
             </LinearLayout>
+
             <View android:layout_marginBottom="36dp" style="@style/Divider"/>
 
             <LinearLayout
@@ -179,8 +180,8 @@
                         android:layout_marginBottom="30.9dp"
                         android:text="18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오."
                         android:textSize="16sp"
-                        android:textColor="@color/button_backg"
-                        android:fontFamily="@font/nanumbarungothicbold"/>
+                        android:textColor="@color/detail_passage"
+                        android:fontFamily="@font/nanumbarungothic"/>
             </LinearLayout>
 
         </LinearLayout>

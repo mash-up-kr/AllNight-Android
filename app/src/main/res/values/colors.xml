@@ -7,4 +7,5 @@
     <color name="button_backg">#d3ba91</color>
     <color name="backgound">#0b0c15</color>
     <color name="detail_appbar_colorscrim">#b20b0c15</color>
+    <color name="detail_passage">#d8d8d8</color>
 </resources>

@@ -16,13 +16,13 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/nanumbarungothic"/>/>
-        <CheckBox
-                android:id="@+id/checkBox"
+        <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp" android:button="@drawable/ic_erase_24_normal"/>
+                android:layout_marginBottom="16dp" android:src="@drawable/ic_erase_24_normal"
+                android:id="@+id/delete_button"/>
 
 </LinearLayout>

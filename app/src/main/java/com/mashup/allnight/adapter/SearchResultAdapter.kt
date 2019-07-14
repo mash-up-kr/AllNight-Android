@@ -7,7 +7,7 @@ import com.mashup.allnight.ISearchResultItemCheckedListener
 import com.mashup.allnight.R
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.viewholder.SearchResultViewHolder
-import kotlinx.android.synthetic.main.bucket_item.view.*
+import kotlinx.android.synthetic.main.search_result_item.view.*
 
 class SearchResultAdapter (private var itemList : MutableList<DataList>,
                            private val resultItemCheckedListener: ISearchResultItemCheckedListener):RecyclerView.Adapter<SearchResultViewHolder>() {

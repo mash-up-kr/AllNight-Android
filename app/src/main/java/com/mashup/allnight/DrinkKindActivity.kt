@@ -87,8 +87,19 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
                 }
             }
         }
-        if(data.checked)
-            checkedList.add(data)
+        if(data.checked){
+            if(checkedList.size == 0){
+                checkedList.add(data)
+            }
+            else {
+                for (i in 0 until checkedList.size) {
+                    if (checkedList[i].name == data.name)
+                        break
+                    if (i + 1 == checkedList.size)
+                        checkedList.add(data)
+                }
+            }
+        }
         else
             checkedList.removeAll { dataList -> data.name == dataList.name }
     }

@@ -7,6 +7,7 @@ import com.mashup.allnight.R
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.viewholder.BucketItemViewHolder
 import com.mashup.allnight.viewholder.SearchResultViewHolder
+import kotlinx.android.synthetic.main.bucket_item.view.*
 
 
 class BucketItemAdapter (private var itemList : MutableList<DataList>):RecyclerView.Adapter<BucketItemViewHolder>() {
@@ -24,6 +25,10 @@ class BucketItemAdapter (private var itemList : MutableList<DataList>):RecyclerV
     }
 
     override fun onBindViewHolder(holder: BucketItemViewHolder, position: Int) {
+        holder.itemView.delete_button.setOnClickListener{
+            itemList.remove(itemList[position])
+            notifyDataSetChanged()
+        }
         holder.bind(itemList[position])
     }
 }

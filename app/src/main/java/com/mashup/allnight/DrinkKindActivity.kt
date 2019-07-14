@@ -90,9 +90,6 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
         if(data.checked)
             checkedList.add(data)
         else
-            for (i in checkedList) {
-                if(i.name == data.name)
-                    checkedList.remove(data)
-            }
+            checkedList.removeAll { dataList -> data.name == dataList.name }
     }
 }

@@ -25,12 +25,11 @@ class SearchResultAdapter (private var itemList : MutableList<DataList>,
     }
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) {
-        holder.bind(itemList[position], resultItemCheckedListener)
-
         holder.itemView.checkBox.setOnCheckedChangeListener { p0, p1 ->
             itemList[position].checked = holder.itemView.checkBox.isChecked
             resultItemCheckedListener.onResultItemChecked(itemList[position])
         }
+        holder.bind(itemList[position], resultItemCheckedListener)
     }
 
     fun setItemList(itemList: MutableList<DataList>) {

@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.BucketItemAdapter
-import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
 import kotlinx.android.synthetic.main.activity_bucket.*
-import kotlinx.android.synthetic.main.activity_drink_kind.*
 
 class BucketActivity : AppCompatActivity() {
 

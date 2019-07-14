@@ -3,11 +3,13 @@ package com.mashup.allnight.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.mashup.allnight.ISearchResultItemCheckedListener
 import com.mashup.allnight.R
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.viewholder.SearchResultViewHolder
 
-class SearchResultAdapter (private var itemList : MutableList<DataList>):RecyclerView.Adapter<SearchResultViewHolder>() {
+class SearchResultAdapter (private var itemList : MutableList<DataList>,
+                           private val resultItemCheckedListener: ISearchResultItemCheckedListener):RecyclerView.Adapter<SearchResultViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultViewHolder {
         val viewHolder: SearchResultViewHolder
 
@@ -22,7 +24,7 @@ class SearchResultAdapter (private var itemList : MutableList<DataList>):Recycle
     }
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) {
-        holder.bind(itemList[position])
+        holder.bind(itemList[position], resultItemCheckedListener)
     }
 
     fun setItemList(itemList: MutableList<DataList>) {

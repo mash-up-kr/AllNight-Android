@@ -16,10 +16,6 @@
         </activity>
         <activity android:name=".ScrapSingleActivity">
         </activity>
-        <activity android:name=".DrinkKindMixSearchActivity">
-        </activity>
-        <activity android:name=".BucketMixSearchActivity">
-        </activity>
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".DrinkKindActivity">

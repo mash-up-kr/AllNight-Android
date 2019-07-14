@@ -8,13 +8,10 @@ import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.retrofit.RetrofitManager
 import kotlinx.android.synthetic.main.activity_drink_kind.*
-import kotlinx.android.synthetic.main.activity_login2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.R.string.cancel
-import android.os.Handler
-import kotlinx.android.synthetic.main.activity_drink_kind.view.*
+import com.mashup.allnight.viewholder.SearchResultViewHolder
 import java.util.*
 
 
@@ -26,7 +23,7 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
 
         next_button.isClickable = false
 
-        val adapter = SearchResultAdapter(arrayListOf())
+        val adapter = SearchResultAdapter(arrayListOf(), this)
         search_item_recyclerview.adapter = adapter
         search_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
@@ -38,7 +35,6 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
                     checkedList.add(adapter.getItem(i))
                 }
             }
-
             val nextIntent = Intent(this, BucketActivity::class.java)
             nextIntent.putExtra("checked", checkedList)
             startActivity(nextIntent)
@@ -70,15 +66,10 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
             finish()
         }
 
-        next_button.setOnClickListener{
-            val intent = Intent(this, BucketActivity::class.java)
-            startActivity(intent)
-        }
-
     }
 
     override fun onResultItemChecked(checked: Boolean){
-        val adapter = SearchResultAdapter(arrayListOf())
+        val adapter = search_item_recyclerview.adapter as SearchResultAdapter
 
         for(i in 0 until adapter.getItemCount()){
             if(adapter.getItem(i).checked){

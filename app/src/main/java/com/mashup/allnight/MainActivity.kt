@@ -12,7 +12,6 @@ import com.mashup.allnight.dataclass.MainListItem
 import com.mashup.allnight.viewholder.MainListViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_content.*
-import kotlinx.android.synthetic.main.main_content.view.*
 import kotlinx.android.synthetic.main.main_nav_header.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // set fab listener
         fabSearch.setOnClickListener {
-            val intent = Intent(this, DrinkKindMixSearchActivity::class.java)
+            val intent = Intent(this, DrinkKindActivity::class.java)
             startActivity(intent)
         }
     }

@@ -8,35 +8,34 @@ import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.retrofit.RetrofitManager
 import kotlinx.android.synthetic.main.activity_drink_kind.*
-import kotlinx.android.synthetic.main.activity_login2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.R.string.cancel
-import android.os.Handler
-import android.util.Log
-import kotlinx.android.synthetic.main.activity_drink_kind.view.*
 import java.util.*
 
 
-class DrinkKindActivity : AppCompatActivity() {
+class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() {
+
+    var checkedList: ArrayList<DataList> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_kind)
 
-        val adapter = SearchResultAdapter(arrayListOf())
+        next_button.isEnabled = false
+
+        val adapter = SearchResultAdapter(arrayListOf(), this)
         search_item_recyclerview.adapter = adapter
         search_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
-        var checkedList: ArrayList<DataList> = arrayListOf()
+        //var ckList: ArrayList<DataList> = arrayListOf()
         next_button.setOnClickListener{
-            checkedList.clear()
+            /*ckList.clear()
             for(i in 0 until adapter.getItemCount()){
                 if(adapter.getItem(i).checked){
-                    checkedList.add(adapter.getItem(i))
+                    ckList.add(adapter.getItem(i))
                 }
-            }
+            }*/
 
             val nextIntent = Intent(this, BucketActivity::class.java)
             nextIntent.putExtra("checked", checkedList)
@@ -45,18 +44,21 @@ class DrinkKindActivity : AppCompatActivity() {
 
 
         btnSearch.setOnClickListener {
-            val call = RetrofitManager.createApi().getSearchIngredientListResult(editText.text.toString().trim())
+            val call = RetrofitManager.createApi().getSearchIngredientListResult(editText.text.toString())
             call.enqueue(object:Callback<ArrayList<String>> {
                 override fun onFailure(call: Call<ArrayList<String>>, t: Throwable) {
-                    Log.w(DrinkKindActivity::javaClass.name, "Error while get drink kind list: " + t.localizedMessage)
                 }
 
                 override fun onResponse(call: Call<ArrayList<String>>, response: Response<ArrayList<String>>) {
                     val itemList: MutableList<DataList> = arrayListOf()
                     response.body()?.let {
-                        for(receivedItem in it) {
-                            val newItem = DataList(receivedItem, false)
-                            itemList.add(newItem)
+                        for(item in it) {
+                            val item = DataList(item, false)
+                            for(checkedItem in checkedList){
+                                if(checkedItem.name == item.name)
+                                    item.checked = true
+                            }
+                            itemList.add(item)
                         }
                     }
 
@@ -69,11 +71,25 @@ class DrinkKindActivity : AppCompatActivity() {
         back_button.setOnClickListener{
             finish()
         }
+    }
 
-        next_button.setOnClickListener{
-            val intent = Intent(this, BucketActivity::class.java)
-            startActivity(intent)
+    override fun onResultItemChecked(data: DataList){
+        val adapter = search_item_recyclerview.adapter as SearchResultAdapter
+
+        adapter?.let {
+            for (i in 0 until it.getItemCount()) {
+                if (it.getItem(i).checked) {
+                    next_button.isEnabled = true
+                    break
+                }
+                if (i + 1 == it.getItemCount()) {
+                    next_button.isEnabled = false
+                }
+            }
         }
-
+        if(data.checked)
+            checkedList.add(data)
+        else
+            checkedList.removeAll { dataList -> data.name == dataList.name }
     }
 }

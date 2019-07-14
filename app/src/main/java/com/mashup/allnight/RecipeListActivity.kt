@@ -50,12 +50,12 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
 
     private fun init() {
         val list = ArrayList<RecipeListItem>()
-        list.add(RecipeListItem("x", "test1"))
-        list.add(RecipeListItem("x", "test2"))
-        list.add(RecipeListItem("x", "test3"))
-        list.add(RecipeListItem("x", "test4"))
-        list.add(RecipeListItem("x", "test5"))
-        list.add(RecipeListItem("x", "test6"))
+        list.add(RecipeListItem("x", "test1", false, "1"))
+        list.add(RecipeListItem("x", "test2", false, "1"))
+        list.add(RecipeListItem("x", "test3", false, "1"))
+        list.add(RecipeListItem("x", "test4", false, "1"))
+        list.add(RecipeListItem("x", "test5", false, "1"))
+        list.add(RecipeListItem("x", "test6", false, "1"))
         val adapter = RecipeListAdapter(list)
         cardView_.adapter = adapter
         cardView_.layoutManager = gridLayoutManager

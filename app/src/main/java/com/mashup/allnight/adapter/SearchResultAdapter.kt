@@ -7,6 +7,7 @@ import com.mashup.allnight.ISearchResultItemCheckedListener
 import com.mashup.allnight.R
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.viewholder.SearchResultViewHolder
+import kotlinx.android.synthetic.main.bucket_item.view.*
 
 class SearchResultAdapter (private var itemList : MutableList<DataList>,
                            private val resultItemCheckedListener: ISearchResultItemCheckedListener):RecyclerView.Adapter<SearchResultViewHolder>() {
@@ -25,6 +26,11 @@ class SearchResultAdapter (private var itemList : MutableList<DataList>,
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) {
         holder.bind(itemList[position], resultItemCheckedListener)
+
+        holder.itemView.checkBox.setOnCheckedChangeListener { p0, p1 ->
+            itemList[position].checked = holder.itemView.checkBox.isChecked
+            resultItemCheckedListener.onResultItemChecked(itemList[position])
+        }
     }
 
     fun setItemList(itemList: MutableList<DataList>) {

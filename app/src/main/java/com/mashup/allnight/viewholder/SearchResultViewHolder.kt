@@ -9,9 +9,5 @@ import kotlinx.android.synthetic.main.search_result_item.view.*
 class SearchResultViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(data: DataList, chkListener:ISearchResultItemCheckedListener) {
         itemView.search_item_text.text = data.name
-        itemView.checkBox.setOnCheckedChangeListener { p0, p1 ->
-            data.checked = itemView.checkBox.isChecked
-            chkListener.onResultItemChecked(data.checked)
-        }
     }
 }

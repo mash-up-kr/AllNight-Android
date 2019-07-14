@@ -62,7 +62,7 @@
             android:layout_height="23dp" app:srcCompat="@drawable/ic_arrow_front"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp" android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent" android:id="@+id/next_button"
-            android:background="@drawable/mynext"/>
+            android:background="@drawable/mynext" android:clickable="true"/>
     <ImageButton
             android:layout_width="24dp"
             android:layout_height="24dp" app:srcCompat="@drawable/ic_find_24_normal"

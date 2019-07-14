@@ -33,9 +33,12 @@ class DetailActivity : AppCompatActivity() {
 
     private fun initDetail() {
         setSupportActionBar(detailToolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+            it.setDisplayShowTitleEnabled(false)
+        }
+
         need_recyclerView.layoutManager = LinearLayoutManager(this)
 
     }
@@ -100,6 +103,10 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            android.R.id.home -> {  // ToolBar 에서 맨 좌측 버튼
+                finish()
+                true
+            }
             R.id.menu_detail_scrap -> {
                 true
             }

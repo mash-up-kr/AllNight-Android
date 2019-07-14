@@ -34,7 +34,7 @@
                     android:layout_weight="1"/>
 
             <ImageView
-                    android:id="@+id/BtnViewMultiple"
+                    android:id="@+id/BtnSwitchViewMode"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_more"
@@ -59,8 +59,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="44dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
             android:orientation="vertical"
     ></androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

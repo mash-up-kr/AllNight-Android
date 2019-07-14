@@ -29,7 +29,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"/>
             <ImageView
-                    android:id="@+id/BtnViewMultiple"
+                    android:id="@+id/BtnSwitchViewMode"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_more"

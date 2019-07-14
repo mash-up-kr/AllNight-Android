@@ -8,9 +8,14 @@ import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
 import com.mashup.allnight.retrofit.RetrofitManager
 import kotlinx.android.synthetic.main.activity_drink_kind.*
+import kotlinx.android.synthetic.main.activity_login2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.R.string.cancel
+import android.os.Handler
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_drink_kind.view.*
 import com.mashup.allnight.viewholder.SearchResultViewHolder
 import java.util.*
 
@@ -20,8 +25,6 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_kind)
-
-        next_button.isClickable = false
 
         val adapter = SearchResultAdapter(arrayListOf(), this)
         search_item_recyclerview.adapter = adapter
@@ -35,6 +38,7 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
                     checkedList.add(adapter.getItem(i))
                 }
             }
+
             val nextIntent = Intent(this, BucketActivity::class.java)
             nextIntent.putExtra("checked", checkedList)
             startActivity(nextIntent)
@@ -42,7 +46,7 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
 
 
         btnSearch.setOnClickListener {
-            val call = RetrofitManager.IRetrofitApi.getSearchIngredientListResult(editText.text.toString())
+            val call = RetrofitManager.createApi().getSearchIngredientListResult(editText.text.toString())
             call.enqueue(object:Callback<ArrayList<String>> {
                 override fun onFailure(call: Call<ArrayList<String>>, t: Throwable) {
                 }
@@ -65,19 +69,20 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
         back_button.setOnClickListener{
             finish()
         }
-
     }
 
     override fun onResultItemChecked(checked: Boolean){
         val adapter = search_item_recyclerview.adapter as SearchResultAdapter
 
-        for(i in 0 until adapter.getItemCount()){
-            if(adapter.getItem(i).checked){
-                next_button.isClickable = true
-                break
-            }
-            if(i+1==adapter.getItemCount()){
-                next_button.isClickable = false
+        adapter?.let {
+            for (i in 0 until it.getItemCount()) {
+                if (it.getItem(i).checked) {
+                    next_button.isClickable = true
+                    break
+                }
+                if (i + 1 == it.getItemCount()) {
+                    next_button.isClickable = false
+                }
             }
         }
     }

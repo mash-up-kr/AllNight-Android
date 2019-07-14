@@ -1,44 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="511dp"
+        android:layout_height="511dp" xmlns:apps="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:background="#765959"
-        android:layout_marginBottom="31dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="7dp"
+        android:layout_margin="7dp"
 >
     <CheckBox
             android:id="@+id/BtnScrap"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_gravity="right"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="end"
             android:src="@drawable/ic_normal"
             android:scaleType="center"
             android:button="@drawable/myscrap"
+            apps:layout_constraintEnd_toEndOf="parent"
+            apps:layout_constraintTop_toTopOf="parent"
     />
     <ImageView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:layout_marginTop="340dp"
+            android:layout_marginBottom="2dp"
             android:src="@drawable/ic_24"
+            apps:layout_constraintStart_toStartOf="parent"
+            apps:layout_constraintBottom_toTopOf="@id/title"
     />
     <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
             android:textSize="39sp"
             android:textColor="#ffffff"
-            android:layout_marginTop="8dp"
             android:text="Bijou"
+            apps:layout_constraintStart_toStartOf="parent"
+            apps:layout_constraintBottom_toBottomOf="parent"
             android:fontFamily="@font/adobehebrewbold"
     />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

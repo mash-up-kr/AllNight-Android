@@ -4,7 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import com.mashup.allnight.adapter.RecipeMultipleListAdapter
+import com.mashup.allnight.adapter.RecipeListAdapter
+import com.mashup.allnight.dataclass.RecipeListItem
 import kotlinx.android.synthetic.main.activity_scrap_multiple.*
 
 class ScrapMultipleActivity : AppCompatActivity() {
@@ -28,14 +29,14 @@ class ScrapMultipleActivity : AppCompatActivity() {
     }
 
     fun init() {
-        val list = ArrayList<MainListItem>()
-        list.add(MainListItem(0, "x", "test1"))
-        list.add(MainListItem(0, "x", "test2"))
-        list.add(MainListItem(0, "x", "test3"))
-        list.add(MainListItem(0, "x", "test4"))
-        list.add(MainListItem(0, "x", "test5"))
-        list.add(MainListItem(0, "x", "test6"))
-        val adapter = RecipeMultipleListAdapter(list)
+        val list = ArrayList<RecipeListItem>()
+        list.add(RecipeListItem("x", "test1", false, "1"))
+        list.add(RecipeListItem("x", "test2", false, "1"))
+        list.add(RecipeListItem("x", "test3", false, "1"))
+        list.add(RecipeListItem("x", "test4", false, "1"))
+        list.add(RecipeListItem("x", "test5", false, "1"))
+        list.add(RecipeListItem("x", "test6", false, "1"))
+        val adapter = RecipeListAdapter(list)
         cardView_.adapter = adapter
         cardView_.layoutManager = GridLayoutManager(this,2)
     }

@@ -23,7 +23,7 @@ class BucketActivity : AppCompatActivity() {
         }
 
         next_button_bucket.setOnClickListener{
-            val intent = Intent(this, recipeSingleActivity::class.java)
+            val intent = Intent(this, RecipeListActivity::class.java)
             startActivity(intent)
         }
     }

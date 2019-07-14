@@ -1,25 +1,34 @@
 package com.mashup.allnight
 
+import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.DrinkDetailAdapter
 import com.mashup.allnight.dataclass.DrinkNeedSpecific
+import com.mashup.allnight.retrofit.RetrofitManager
+import com.mashup.allnight.retrofit.retrofitmodel.RetrofitCocktailDetailResponse
 import kotlinx.android.synthetic.main.activity_detail.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
 
 class DetailActivity : AppCompatActivity() {
+    private var cocktailId: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        cocktailId = intent.getStringExtra(COCKTAIL_ID_KEY)
         initDetail()
-
-
-        need_recyclerView.adapter = DrinkDetailAdapter(init())
-        need_recyclerView.layoutManager = LinearLayoutManager(this)
+        requestDetailData()
     }
 
     private fun initDetail() {
@@ -27,6 +36,60 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
+        need_recyclerView.layoutManager = LinearLayoutManager(this)
+
+    }
+
+    private fun requestDetailData() {
+        if (cocktailId.isNullOrEmpty()) {
+            Log.v(DetailActivity::class.java.simpleName, "Fail to request cocktail detail: Null or Empty CocktailId")
+            showErrorToast("Fail to request: No cocktail ID")
+            return
+        }
+
+        val req = RetrofitManager.createApi().getCocktailDetailResult(cocktailId!!)
+        req.enqueue(object: Callback<RetrofitCocktailDetailResponse> {
+            override fun onFailure(call: Call<RetrofitCocktailDetailResponse>, t: Throwable) {
+                Log.v(DetailActivity::class.java.simpleName, "Fail to get cocktail detail: ${t.localizedMessage} ($cocktailId)")
+                showErrorToast("Fail to request: No cocktail ID")
+            }
+
+            override fun onResponse(
+                call: Call<RetrofitCocktailDetailResponse>,
+                response: Response<RetrofitCocktailDetailResponse>
+            ) {
+                if (!response.isSuccessful) {
+                    Log.v(DetailActivity::class.java.simpleName, "Fail to get cocktail detail: ${response.code()}")
+                    showErrorToast("Fail to request: No cocktail ID")
+                }
+
+                if (response.body() != null)
+                    setCocktailRecipeData(response.body()!!)
+            }
+        })
+    }
+
+    private fun setCocktailRecipeData(dataRes: RetrofitCocktailDetailResponse) {
+        val isKorean = Locale.getDefault().language.startsWith("ko")
+        tvDetailTitle.text = if (isKorean) dataRes.drinkName else dataRes.drinkNameEng
+        intro_passage.text = "" // 엥 이거 서버리스폰스에 없음 뭐지
+        glass_passage.text = dataRes.glass
+        need_recyclerView.adapter = DrinkDetailAdapter(createIngrdList(dataRes, isKorean))
+        instruction_passage.text = dataRes.instruction
+    }
+
+    private fun createIngrdList(dataRes: RetrofitCocktailDetailResponse, isKorean: Boolean)
+            : ArrayList<DrinkNeedSpecific> {
+        val list = ArrayList<DrinkNeedSpecific>()
+        for (i in 0 until dataRes.ingredients.size) {
+            list.add(
+                DrinkNeedSpecific(
+                    if (isKorean) dataRes.ingredients[i]
+                    else dataRes.ingredientsEng[i],
+                dataRes.measures[i].toInt()))
+        }
+
+        return list
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -43,17 +106,11 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    fun init(): ArrayList<DrinkNeedSpecific>{
-        // 임시 작동확인용 데이터 삽입
-        val temp_item = ArrayList<DrinkNeedSpecific>()
-        temp_item.add(DrinkNeedSpecific("맥주", 10))
-        temp_item.add(DrinkNeedSpecific("물", 1))
-        temp_item.add(DrinkNeedSpecific("고량주", 1))
-
-        return temp_item
+    private fun showErrorToast(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
     companion object {
-        val COCKTAIL_ID_KEY = "cocktailId"
+        const val COCKTAIL_ID_KEY = "cocktailId"
     }
 }

@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // add temporary items
         val arrList = ArrayList<MainListItem>()
-        arrList.add(MainListItem(1,0, "no", "OH MY GOD1"))
-        arrList.add(MainListItem(0,1, "no", "OH MY GOD2"))
-        arrList.add(MainListItem(0,2, "no", "OH MY GOD3"))
-        arrList.add(MainListItem(0,3, "no", "OH MY GOD4"))
-        arrList.add(MainListItem(0,4, "no", "OH MY GOD5"))
+        arrList.add(MainListItem(1,"vOeR6WsBTwvkY-8GnSmy", "no", "OH MY GOD1"))
+        arrList.add(MainListItem(0,"7OeR6WsBTwvkY-8GnSnZ", "no", "OH MY GOD2"))
+        arrList.add(MainListItem(0,"", "no", "OH MY GOD3"))
+        arrList.add(MainListItem(0,"", "no", "OH MY GOD4"))
+        arrList.add(MainListItem(0,"", "no", "OH MY GOD5"))
 
         // initialize recyclerView
         mainAdapter = MainListAdapter(arrList)

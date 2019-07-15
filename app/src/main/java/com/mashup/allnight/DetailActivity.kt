@@ -64,10 +64,10 @@ class DetailActivity : AppCompatActivity() {
                 if (!response.isSuccessful) {
                     Log.v(DetailActivity::class.java.simpleName, "Fail to get cocktail detail: ${response.code()}")
                     showErrorToast("Fail to request: No cocktail ID")
+                    return
                 }
 
-                if (response.body() != null)
-                    setCocktailRecipeData(response.body()!!)
+                response.body()?.let { setCocktailRecipeData(it) }
             }
         })
     }

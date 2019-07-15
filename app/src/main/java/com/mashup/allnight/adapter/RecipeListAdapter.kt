@@ -28,4 +28,9 @@ class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): Recycl
         val view = holder.itemView
         view.layoutParams.height = itemHeight
     }
+
+    fun setData(list: ArrayList<RecipeListItem>) {
+        itemList = list
+        notifyDataSetChanged()
+    }
 }

@@ -16,6 +16,7 @@ class BucketActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bucket)
 
         val adapter = BucketItemAdapter(initItemData())
+
         bucket_item_recyclerview.adapter = adapter
         bucket_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
@@ -24,7 +25,13 @@ class BucketActivity : AppCompatActivity() {
         }
 
         next_button_bucket.setOnClickListener{
+            val items: ArrayList<String> = arrayListOf()
+            for(i in 0 until adapter.getItemList().size) {
+                items.add(adapter.getItemList()[i].name)
+            }
+
             val intent = Intent(this, RecipeListActivity::class.java)
+            intent.putExtra("item", items)
             startActivity(intent)
         }
     }

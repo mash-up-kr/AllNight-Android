@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.BucketItemAdapter
 import com.mashup.allnight.dataclass.DataList
 import kotlinx.android.synthetic.main.activity_bucket.*
+import kotlinx.android.synthetic.main.bucket_item.*
 
 class BucketActivity : AppCompatActivity() {
 

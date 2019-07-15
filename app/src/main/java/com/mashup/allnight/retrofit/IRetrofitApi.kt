@@ -1,6 +1,5 @@
 package com.mashup.allnight.retrofit
 
-import com.google.common.collect.Multimap
 import com.mashup.allnight.retrofit.retrofitmodel.RetrofitCocktailDetailResponse
 import com.mashup.allnight.retrofit.retrofitmodel.RetrofitCocktailListResponse
 import com.mashup.allnight.retrofit.retrofitmodel.RetrofitCocktailScrapResponse

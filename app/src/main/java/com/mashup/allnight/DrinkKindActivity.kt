@@ -42,9 +42,8 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
             startActivity(nextIntent)
         }
 
-
         btnSearch.setOnClickListener {
-            val call = RetrofitManager.createApi().getSearchIngredientListResult(editText.text.toString())
+            val call = RetrofitManager.createApi().getSearchIngredientListResult(editText.text.toString().trim())
             call.enqueue(object:Callback<ArrayList<String>> {
                 override fun onFailure(call: Call<ArrayList<String>>, t: Throwable) {
                 }

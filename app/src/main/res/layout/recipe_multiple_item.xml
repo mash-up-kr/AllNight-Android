@@ -14,7 +14,13 @@
             android:id="@+id/ivCocktail"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
+    <!-- Cover view for gradation -->
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradation_black_to_bottom" />
+
     <CheckBox
             android:id="@+id/BtnScrap"
             android:layout_width="24dp"
@@ -31,7 +37,7 @@
     <LinearLayout android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:gravity="center_vertical"
-                  android:layout_marginStart="20dp"
+                  android:layout_marginStart="10dp"
                   apps:layout_constraintStart_toStartOf="parent"
                   apps:layout_constraintBottom_toTopOf="@id/title">
         <ImageView
@@ -48,16 +54,16 @@
                 android:fontFamily="@font/adobehebrewbold"/>
     </LinearLayout>
 
-
     <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:text="Bijou"
+            android:text="Cocktail"
             apps:layout_constraintStart_toStartOf="parent"
             apps:layout_constraintBottom_toBottomOf="parent"
             android:fontFamily="@font/adobehebrewbold"

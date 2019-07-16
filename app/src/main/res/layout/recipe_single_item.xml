@@ -14,7 +14,12 @@
             android:id="@+id/ivCocktail"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
+    <!-- Cover view for gradation -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradation_black_to_bottom" />
     <CheckBox
             android:id="@+id/BtnScrap"
             android:layout_width="24dp"
@@ -48,12 +53,12 @@
                 android:fontFamily="@font/adobehebrewbold"/>
     </LinearLayout>
 
-
     <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:textSize="39sp"
             android:textColor="#ffffff"

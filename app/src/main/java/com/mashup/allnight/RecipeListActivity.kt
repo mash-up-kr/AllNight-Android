@@ -46,7 +46,7 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
 
         BtnSwitchViewMode.setOnClickListener{
             isSingleViewMode = !isSingleViewMode
-            passItemHeightToAdapter()
+            passItemViewModeToAdapter()
         }
 
         BtnFilter.setOnClickListener {
@@ -74,7 +74,7 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
                 return if (isSingleViewMode) 2 else 1
             }
         }
-        passItemHeightToAdapter()
+        passItemViewModeToAdapter()
     }
 
     private fun requestRecipeListData() {
@@ -125,11 +125,8 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
         (cardView_.adapter as RecipeListAdapter).setData(list)
     }
 
-    private fun passItemHeightToAdapter() {
-        val dm = DisplayMetrics()
-        window.windowManager.defaultDisplay.getMetrics(dm)
-        val height = (dm.widthPixels * (if(isSingleViewMode) 1.2f else 0.6f)).toInt()
-        (cardView_.adapter as RecipeListAdapter).itemHeight = height
+    private fun passItemViewModeToAdapter() {
+        (cardView_.adapter as RecipeListAdapter).isSingleItemViewMode = isSingleViewMode
         cardView_.adapter?.notifyDataSetChanged()
     }
 

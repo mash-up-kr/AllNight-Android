@@ -3,6 +3,7 @@ package com.mashup.allnight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.SearchResultAdapter
 import com.mashup.allnight.dataclass.DataList
@@ -65,6 +66,17 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
                 }
 
             })
+        }
+
+        editText.setOnEditorActionListener{_, actionId, _ ->
+            if(actionId == EditorInfo.IME_ACTION_SEARCH){
+                btnSearch.performClick()
+                true
+            }
+            else{
+                false
+            }
+
         }
 
         back_button.setOnClickListener{

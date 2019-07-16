@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvMainTodayTitle" android:layout_marginStart="5dp"
             android:layout_marginBottom="2dp" app:layout_constraintBottom_toTopOf="@+id/name_text"/>
     <TextView
-            android:text="Bijou"
+            android:text="Cocktail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/name_text" android:textSize="20sp"

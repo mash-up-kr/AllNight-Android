@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AllNight</string>
+    <string name="favorite_recipe">스크랩한 레시피</string>
+    <string name="filter_alcohol_all">모두</string>
+    <string name="filter_alcohol_none">무알콜</string>
+    <string name="filter_alcohol_only">알콜</string>
+    <string name="filter_apply">적용</string>
+    <string name="first_page_description">재료를 선택해서 레시피를 찾아보시겠어요?</string>
+    <string name="first_page_no_thanks">아니요, 다음에 할래요</string>
+    <string name="first_page_yes_please">네, 해볼래요</string>
+    <string name="search_ingredients_hint">ex) 보드카</string>
+    <string name="settings">설정</string>
+    <string name="social_login">소셜 미디어로 로그인</string>
+    <string name="what_ingredients_do_you_have">어떤 재료를 가지고 계신가요?</string>
+    <string name="you_can_choose_multiple_items">여러 아이템을 선택할 수 있어요.</string>
+    <string name="contact">문의</string>
+    <string name="favorite">스크랩</string>
+    <string name="start">시작하기</string>
+    <string name="filter_number_of_ingredients">재료 수</string>
+</resources>

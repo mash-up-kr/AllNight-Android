@@ -1,8 +1,10 @@
 package com.mashup.allnight.dataclass
 
-class RecipeListItem (
+import java.io.Serializable
+
+class RecipeListItem(
     val imageUrl: String,
     val title: String,
     var scraped: Boolean = false,
     val id: String
-)
+):Serializable

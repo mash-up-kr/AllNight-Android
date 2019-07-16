@@ -31,4 +31,8 @@ class BucketItemAdapter (private var itemList : MutableList<DataList>):RecyclerV
         }
         holder.bind(itemList[position])
     }
+
+    fun getItemList(): MutableList<DataList> {
+        return itemList
+    }
 }

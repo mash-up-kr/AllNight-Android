@@ -18,8 +18,9 @@ interface IRetrofitApi {
 
     @GET("api/v1/search/cocktail")
     fun getSearchCocktailListResult(
-        @QueryMap queryMap: Map<String, String>
-    ) : Call<RetrofitCocktailListResponse>
+        @QueryMap queryMap: Map<String, String>,
+        @Query("ingredients") ingredients: Array<String>
+    ) : Call<ArrayList<RetrofitCocktailListResponse>>
 
     @GET("api/v1/search/cocktail/{id}")
     fun getCocktailDetailResult(

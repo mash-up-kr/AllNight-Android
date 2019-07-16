@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 class RetrofitCocktailListResponse {
 
-    @SerializedName("_id")
+    @SerializedName("id")
     val id = ""
 
     @SerializedName("drinkName")
@@ -16,14 +16,14 @@ class RetrofitCocktailListResponse {
     @SerializedName("drinkThumb")
     val thumbnailUrl = ""
 
-    @SerializedName("EnDrinkName")
+    @SerializedName("enDrinkName")
     val drinkNameEng = ""
 
     /*
-    "_id": "AWuj2MyFPXZajIsHRb7_",
+    "id": "AWuj2MyFPXZajIsHRb7_",
     "drinkName": "크림 드 멘체",
     "alcoholic": "Alcoholic",
     "drinkThumb": "https://www.thecocktaildb.com/images/media/drink/yxswtp1441253918.jpg",
-    "EnDrinkName": "Creme de Menthe"
+    "enDrinkName": "Creme de Menthe"
     */
 }

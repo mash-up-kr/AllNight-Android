@@ -10,6 +10,11 @@
         android:layout_marginStart="7dp"
         android:layout_margin="7dp"
 >
+    <com.mashup.allnight.customview.WebImageView
+            android:id="@+id/ivCocktail"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     <CheckBox
             android:id="@+id/BtnScrap"
             android:layout_width="24dp"

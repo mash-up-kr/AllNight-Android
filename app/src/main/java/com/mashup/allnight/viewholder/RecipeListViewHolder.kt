@@ -7,7 +7,9 @@ import kotlinx.android.synthetic.main.recipe_single_item.view.*
 
 class RecipeListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-   fun bind(mainListItem: RecipeListItem){
-            itemView.title.text = mainListItem.title
+   fun bind(mainListItem: RecipeListItem, itemHeight: Int){
+       itemView.title.text = mainListItem.title
+       itemView.ivCocktail.imgUrl = mainListItem.imageUrl
+       itemView.layoutParams.height = itemHeight
    }
 }

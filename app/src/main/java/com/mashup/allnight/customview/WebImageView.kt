@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.os.AsyncTask
 import android.util.AttributeSet
 import android.widget.ImageView
+import androidx.collection.LruCache
 import java.net.URL
 
 class WebImageView
@@ -29,7 +30,6 @@ class WebImageView
             loadImage()
         }
 
-
     init {
         webImageLoadedListeners.clear()
     }
@@ -37,6 +37,8 @@ class WebImageView
 
     private fun loadImage() {
         if(imgUrl.isEmpty()) return
+
+        setImageDrawable(null)
 
         downloadImageTask?.let {
             if (!it.isCancelled) it.cancel(true)
@@ -58,14 +60,20 @@ class WebImageView
     }
 
     companion object {
+        private val lruCache = LruCache<String, Bitmap>(100) //use LruCache (memory cache) to save image temporary (100 items)
+
         private class DownloadImageTask(val wiv: WebImageView): AsyncTask<String, Void, Bitmap?>() {
             override fun doInBackground(vararg p0: String?): Bitmap? {
-                var bmp: Bitmap? = null
-                try {
-                    val inputStream = URL(p0[0]).openStream()
-                    bmp = BitmapFactory.decodeStream(inputStream)
-                } catch(ee: Exception) {
-                    ee.printStackTrace()
+                var bmp: Bitmap? = loadImageFromMemCache(p0[0]!!)
+
+                if (bmp == null) {
+                    try {
+                        val inputStream = URL(p0[0]).openStream()
+                        bmp = BitmapFactory.decodeStream(inputStream)
+                        saveImageToMemCache(p0[0]!!, bmp)
+                    } catch (ee: Exception) {
+                        ee.printStackTrace()
+                    }
                 }
                 return bmp
 
@@ -74,9 +82,19 @@ class WebImageView
             override fun onPostExecute(result: Bitmap?) {
                 val bmp = BitmapDrawable(wiv.resources, result)
                 wiv.setImageDrawable(bmp)
+
                 for (listener: IWebImageViewLoadListener in wiv.webImageLoadedListeners)
                     listener.onWebImageLoaded(bmp)
                 super.onPostExecute(result)
+            }
+
+
+            fun loadImageFromMemCache(id: String): Bitmap? {
+                return lruCache.get(id)
+            }
+
+            fun saveImageToMemCache(id: String, bmp: Bitmap) {
+                lruCache.put(id, bmp)
             }
         }
 

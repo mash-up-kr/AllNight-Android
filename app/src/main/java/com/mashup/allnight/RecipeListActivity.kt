@@ -118,7 +118,8 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
                 dataRes.thumbnailUrl,
                 if (isKorean) dataRes.drinkName else dataRes.drinkNameEng,
                 false,
-                dataRes.id))
+                dataRes.id,
+                dataRes.alcoHolic))
         }
 
         (cardView_.adapter as RecipeListAdapter).setData(list)

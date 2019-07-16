@@ -2,7 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
         android:layout_height="511dp" xmlns:apps="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:background="#765959"
@@ -28,17 +28,27 @@
             apps:layout_constraintEnd_toEndOf="parent"
             apps:layout_constraintTop_toTopOf="parent"
     />
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:layout_marginBottom="2dp"
-            android:src="@drawable/ic_24"
-            apps:layout_constraintStart_toStartOf="parent"
-            apps:layout_constraintBottom_toTopOf="@id/title"
-    />
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical"
+                  android:layout_marginStart="20dp"
+                  apps:layout_constraintStart_toStartOf="parent"
+                  apps:layout_constraintBottom_toTopOf="@id/title">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_24"
+                tools:ignore="ContentDescription"/>
+        <TextView
+                android:id="@+id/tvAlcoholic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alcoholic"
+                android:textColor="@color/button_backg"
+                android:fontFamily="@font/adobehebrewbold"/>
+    </LinearLayout>
+
+
     <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"

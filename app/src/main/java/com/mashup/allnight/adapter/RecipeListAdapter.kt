@@ -14,10 +14,12 @@ import com.mashup.allnight.viewholder.RecipeListViewHolder
 
 class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): RecyclerView.Adapter<RecipeListViewHolder>() {
 
-    var itemHeight = 0
+    var isSingleItemViewMode = true
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recipe_single_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(
+            if (viewType == 0) R.layout.recipe_single_item else R.layout.recipe_multiple_item,
+            parent,false)
 
         return RecipeListViewHolder(view)
     }
@@ -27,7 +29,7 @@ class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): Recycl
     }
 
     override fun onBindViewHolder(holder:RecipeListViewHolder, position: Int) {
-        holder.bind(itemList[position], itemHeight)
+        holder.bind(itemList[position])
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
             intent.putExtra(COCKTAIL_ID_KEY, itemList[position].id)
@@ -38,5 +40,9 @@ class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): Recycl
     fun setData(list: ArrayList<RecipeListItem>) {
         itemList = list
         notifyDataSetChanged()
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (isSingleItemViewMode) 0 else 1
     }
 }

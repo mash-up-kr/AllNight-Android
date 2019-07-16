@@ -30,12 +30,12 @@ class ScrapSingleActivity : AppCompatActivity() {
 
     fun init() {
         val list = ArrayList<RecipeListItem>()
-        list.add(RecipeListItem("x", "test1", false, "1"))
-        list.add(RecipeListItem("x", "test2", false, "1"))
-        list.add(RecipeListItem("x", "test3", false, "1"))
-        list.add(RecipeListItem("x", "test4", false, "1"))
-        list.add(RecipeListItem("x", "test5", false, "1"))
-        list.add(RecipeListItem("x", "test6", false, "1"))
+        list.add(RecipeListItem("x", "test1", false, "1", "alcoholic"))
+        list.add(RecipeListItem("x", "test2", false, "1", "alcoholic"))
+        list.add(RecipeListItem("x", "test3", false, "1", "alcoholic"))
+        list.add(RecipeListItem("x", "test4", false, "1", "alcoholic"))
+        list.add(RecipeListItem("x", "test5", false, "1", "alcoholic"))
+        list.add(RecipeListItem("x", "test6", false, "1", "alcoholic"))
         val adapter = RecipeListAdapter(list)
         cardView_.adapter = adapter
         cardView_.layoutManager = LinearLayoutManager(this)

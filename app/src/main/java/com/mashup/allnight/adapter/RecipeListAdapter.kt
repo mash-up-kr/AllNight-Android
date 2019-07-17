@@ -6,15 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mashup.allnight.DetailActivity
 import com.mashup.allnight.DetailActivity.Companion.COCKTAIL_ID_KEY
-import com.mashup.allnight.IScrappedRecipeListRequestListener
 import com.mashup.allnight.R
+import com.mashup.allnight.ScrapManager
 import com.mashup.allnight.dataclass.RecipeListItem
 import com.mashup.allnight.viewholder.RecipeListViewHolder
 import kotlinx.android.synthetic.main.recipe_single_item.view.*
 
 
-class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>,
-                        private val scrapListListener: IScrappedRecipeListRequestListener): RecyclerView.Adapter<RecipeListViewHolder>() {
+class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): RecyclerView.Adapter<RecipeListViewHolder>() {
 
     var isSingleItemViewMode = true
 
@@ -40,9 +39,9 @@ class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>,
             itemList[position].scraped = isChecked
 
             if(isChecked)
-                scrapListListener.addRecipeToScrapList(itemList[position])
+                ScrapManager.addRecipeToScrapList(itemList[position])
             else
-                scrapListListener.removeRecipeFromScrapList(itemList[position])
+                ScrapManager.removeRecipeFromScrapList(itemList[position])
         }
 
         holder.bind(itemList[position])

@@ -21,7 +21,7 @@ import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
 
-class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListener, IScrappedRecipeListRequestListener {
+class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListener {
 
     private var alcoholMode : RecipeListFilterDialog.Companion.ALCOHOL = RecipeListFilterDialog.Companion.ALCOHOL.ALCOHOL
     private var ingrdCount = 3
@@ -70,7 +70,7 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
         }
 
         val list = ArrayList<RecipeListItem>()
-        val adapter = RecipeListAdapter(list, this)
+        val adapter = RecipeListAdapter(list)
         cardView_.adapter = adapter
         cardView_.layoutManager = gridLayoutManager
         gridLayoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
@@ -178,27 +178,6 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
         this.alcoholMode = alcohol
         this.ingrdCount = ingrdCount
         getRecipeListData()
-    }
-
-    override fun addRecipeToScrapList(recipeListItem: RecipeListItem) {
-        val scrappedList = App.prefs.getScrappedRecipeListFromPref()
-        // check contains
-        for(item: RecipeListItem in scrappedList) {
-            if (item.id == recipeListItem.id) return
-        }
-        scrappedList.add(recipeListItem)
-        App.prefs.setScrappedRecipeListFromPref(scrappedList)
-    }
-
-    override fun removeRecipeFromScrapList(recipeListItem: RecipeListItem) {
-        val scrappedList = App.prefs.getScrappedRecipeListFromPref()
-        // check contains
-        val iterator = scrappedList.iterator()
-        while (iterator.hasNext()) {
-            val id = iterator.next().id
-            if (recipeListItem.id == id) iterator.remove()
-        }
-        App.prefs.setScrappedRecipeListFromPref(scrappedList)
     }
 
     private fun showErrorToast(msg: String) {

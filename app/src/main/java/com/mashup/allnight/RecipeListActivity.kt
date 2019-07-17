@@ -111,12 +111,13 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
     }
 
     private fun setCocktailListData(dataArr: ArrayList<RetrofitCocktailListResponse>) {
-        val isKorean = Locale.getDefault().language.startsWith("ko")
+        //val isKorean = Locale.getDefault().language.startsWith("ko")
         val list = ArrayList<RecipeListItem>()
         for(dataRes: RetrofitCocktailListResponse in dataArr) {
             list.add(RecipeListItem(
                 dataRes.thumbnailUrl,
-                if (isKorean) dataRes.drinkName else dataRes.drinkNameEng,
+                //if (isKorean) dataRes.drinkName else
+                dataRes.drinkNameEng,
                 false,
                 dataRes.id,
                 dataRes.alcoHolic))

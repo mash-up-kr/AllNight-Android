@@ -75,7 +75,7 @@ class DetailActivity : AppCompatActivity() {
     private fun setCocktailRecipeData(dataRes: RetrofitCocktailDetailResponse) {
         val isKorean = Locale.getDefault().language.startsWith("ko")
         ivDetailTitleImage.imgUrl = dataRes.thumbnailUrl
-        tvDetailTitle.text = if (isKorean) dataRes.drinkName else dataRes.drinkNameEng
+        tvDetailTitle.text = /*if (isKorean) dataRes.drinkName else*/ dataRes.drinkNameEng
         tvAlcoholic.text = dataRes.alcoHolic
         intro_passage.text = "" // 엥 이거 서버리스폰스에 없음 뭐지
         glass_passage.text = dataRes.glass

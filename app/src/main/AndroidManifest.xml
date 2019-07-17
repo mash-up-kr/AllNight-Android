@@ -13,10 +13,6 @@
             android:theme="@style/Theme.AllNight"
             android:usesCleartextTraffic="true"
             android:name=".App">
-        <activity android:name=".ScrapMultipleActivity">
-        </activity>
-        <activity android:name=".ScrapSingleActivity">
-        </activity>
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".DrinkKindActivity">
@@ -35,8 +31,6 @@
         <activity android:name=".DetailActivity">
         </activity>
         <activity android:name=".RecipeListActivity">
-        </activity>
-        <activity android:name=".DetailActivity">
         </activity>
     </application>
 

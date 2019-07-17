@@ -4,19 +4,19 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mashup.allnight.App
 import com.mashup.allnight.DetailActivity
 import com.mashup.allnight.DetailActivity.Companion.COCKTAIL_ID_KEY
+import com.mashup.allnight.IScrappedRecipeListRequestListener
 import com.mashup.allnight.R
 import com.mashup.allnight.dataclass.RecipeListItem
 import com.mashup.allnight.viewholder.RecipeListViewHolder
 import kotlinx.android.synthetic.main.recipe_single_item.view.*
 
 
-class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): RecyclerView.Adapter<RecipeListViewHolder>() {
+class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>,
+                        private val scrapListListener: IScrappedRecipeListRequestListener): RecyclerView.Adapter<RecipeListViewHolder>() {
 
     var isSingleItemViewMode = true
-    var scrapedList: ArrayList<RecipeListItem> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -31,21 +31,21 @@ class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): Recycl
     }
 
     override fun onBindViewHolder(holder:RecipeListViewHolder, position: Int) {
-        holder.bind(itemList[position])
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
             intent.putExtra(COCKTAIL_ID_KEY, itemList[position].id)
             holder.itemView.context.startActivity(intent)
         }
-        holder.itemView.BtnScrap.setOnCheckedChangeListener{ p0, p1 ->
-            itemList[position].scraped = holder.itemView.BtnScrap.isChecked
+        holder.itemView.BtnScrap.setOnCheckedChangeListener{ _, isChecked ->
+            itemList[position].scraped = isChecked
 
-            if(itemList[position].scraped)
-                scrapedList.add(itemList[position])
+            if(isChecked)
+                scrapListListener.addRecipeToScrapList(itemList[position])
             else
-                scrapedList.remove(itemList[position])
-            App.prefs.setScrappedRecipeListFromPref(scrapedList)
+                scrapListListener.removeRecipeFromScrapList(itemList[position])
         }
+
+        holder.bind(itemList[position])
     }
 
     fun setData(list: ArrayList<RecipeListItem>) {

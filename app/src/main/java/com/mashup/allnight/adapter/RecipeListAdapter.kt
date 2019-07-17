@@ -38,12 +38,13 @@ class RecipeListAdapter(private var itemList: ArrayList<RecipeListItem>): Recycl
             holder.itemView.context.startActivity(intent)
         }
         holder.itemView.BtnScrap.setOnCheckedChangeListener{ p0, p1 ->
-            //itemList[position].scraped = holder.itemView.BtnScrap.isChecked
+            itemList[position].scraped = holder.itemView.BtnScrap.isChecked
+
             if(itemList[position].scraped)
                 scrapedList.add(itemList[position])
             else
                 scrapedList.remove(itemList[position])
-            App.prefs.setStringArrayPref(scrapedList)
+            App.prefs.setScrappedRecipeListFromPref(scrapedList)
         }
     }
 

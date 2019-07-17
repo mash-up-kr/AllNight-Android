@@ -80,7 +80,7 @@
                         android:layout_marginBottom="6dp"
                         android:textColor="#ffffff"
                         android:id="@+id/tvDetailTitle"
-                        android:text="Bijou"
+                        android:text="Cocktail"
                         android:fontFamily="@font/adobehebrewbold"/>
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>

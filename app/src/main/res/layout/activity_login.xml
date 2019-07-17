@@ -8,7 +8,7 @@
         tools:context=".LoginActivity" android:background="@color/backgound">
 
     <Button
-            android:text="시작하기"
+            android:text="@string/start"
             android:layout_width="328dp"
             android:layout_height="52dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"

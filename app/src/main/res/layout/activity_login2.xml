@@ -8,7 +8,7 @@
         tools:context=".Login2Activity" android:background="@color/backgound">
 
     <TextView
-            android:text="아니요, 다음에 할래요."
+            android:text="@string/first_page_no_thanks"
             android:layout_width="328dp"
             android:layout_height="52dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
             android:focusable="true"
             android:fontFamily="@font/nanumbarungothic"/>
     <Button
-            android:text="네, 받아볼래요."
+            android:text="@string/first_page_yes_please"
             android:layout_width="328dp"
             android:layout_height="52dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
             android:background="@drawable/ic_9_patch" android:textColor="#ffffff"
             android:fontFamily="@font/nanumbarungothicbold" android:textSize="19sp"/>
     <TextView
-            android:text="술을 선택해서\n레시피를 추천 받아보시겠어요?"
-            android:layout_width="wrap_content"
+            android:text="@string/first_page_description"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/textView" android:textSize="20sp" android:textColor="#FFFFFF"

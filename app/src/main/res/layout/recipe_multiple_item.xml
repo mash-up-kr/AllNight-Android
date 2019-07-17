@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="207dp" xmlns:apps="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:background="#765959"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="7dp"
+        android:layout_margin="7dp"
+>
+    <com.mashup.allnight.customview.WebImageView
+            android:id="@+id/ivCocktail"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <!-- Cover view for gradation -->
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradation_black_to_bottom" />
+
+    <CheckBox
+            android:id="@+id/BtnScrap"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_normal"
+            android:scaleType="center"
+            android:button="@drawable/myscrap"
+            apps:layout_constraintEnd_toEndOf="parent"
+            apps:layout_constraintTop_toTopOf="parent"
+    />
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical"
+                  android:layout_marginStart="10dp"
+                  apps:layout_constraintStart_toStartOf="parent"
+                  apps:layout_constraintBottom_toTopOf="@id/title">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_24"
+                tools:ignore="ContentDescription"/>
+        <TextView
+                android:id="@+id/tvAlcoholic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alcoholic"
+                android:textColor="@color/button_backg"
+                android:fontFamily="@font/adobehebrewbold"/>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="Cocktail"
+            apps:layout_constraintStart_toStartOf="parent"
+            apps:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="@font/adobehebrewbold"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

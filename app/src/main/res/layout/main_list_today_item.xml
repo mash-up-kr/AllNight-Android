@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content" android:background="#00FFFFFF"
+                                                    android:layout_marginStart="8dp" android:layout_marginEnd="8dp">
+    <ImageView
+            android:layout_height="210dp"
+            android:id="@+id/tvMainTodayTitle"
+            android:background="@drawable/img_main_concept"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content" android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_normal_"
+            android:id="@+id/scrap_button"
+            android:background="#00FFFFFF" app:layout_constraintEnd_toEndOf="@+id/tvMainTodayTitle"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintTop_toTopOf="@+id/tvMainTodayTitle"
+            android:button="@drawable/myscrap"/>
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical"
+                  app:layout_constraintStart_toStartOf="@+id/tvMainTodayTitle"
+                  app:layout_constraintBottom_toTopOf="@+id/name_text">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_24"
+                tools:ignore="ContentDescription"/>
+        <TextView
+                android:id="@+id/tvAlcoholic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alcoholic"
+                android:textColor="@color/button_backg"
+                android:fontFamily="@font/adobehebrewbold"/>
+    </LinearLayout>
+    <TextView
+            android:text="Cocktail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_text" android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_marginStart="7dp" app:layout_constraintStart_toStartOf="@+id/tvMainTodayTitle"
+            android:layout_marginBottom="13dp" app:layout_constraintBottom_toBottomOf="@+id/tvMainTodayTitle"
+            android:fontFamily="@font/adobehebrewbold"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

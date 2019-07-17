@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_features">
+    <item
+        android:id="@+id/mnuScrap"
+        android:title="@string/favorite_recipe"
+        android:icon="@drawable/ic_active_"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="20sp"/>
+    </group>
+    <group android:id="@+id/group_settings">
+        <item
+            android:id="@+id/mnuSetting"
+            android:title="@string/settings"
+            />
+        <item
+            android:id="@+id/mnuComplain"
+            android:title="@string/contact"
+            />
+    </group>
+</menu>

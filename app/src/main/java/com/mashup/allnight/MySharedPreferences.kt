@@ -18,6 +18,9 @@ class MySharedPreferences(context: Context) {
         val type = object : TypeToken<ArrayList<RecipeListItem>>() {}.type
         var items: ArrayList<RecipeListItem> = gson.fromJson(json, type)
 
+        for(item: RecipeListItem in items)
+            item.scraped = true
+
         return items
     }
 

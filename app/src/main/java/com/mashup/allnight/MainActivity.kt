@@ -66,7 +66,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when(p0.itemId){
             R.id.mnuScrap ->{
-                val intent = Intent(this, ScrapSingleActivity::class.java)
+                val intent = Intent(this, RecipeListActivity::class.java)
+                intent.putExtra(RecipeListActivity.RECIPE_LIST_TYPE_KEY, RecipeListActivity.RECIPE_LIST_TYPE_SCRAP)
                 startActivity(intent)
             }
         }

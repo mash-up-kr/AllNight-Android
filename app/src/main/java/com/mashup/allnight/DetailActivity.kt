@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.DrinkDetailAdapter
 import com.mashup.allnight.dataclass.DrinkNeedSpecific
+import com.mashup.allnight.dataclass.RecipeListItem
 import com.mashup.allnight.retrofit.RetrofitManager
 import com.mashup.allnight.retrofit.retrofitmodel.RetrofitCocktailDetailResponse
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -21,6 +22,10 @@ import kotlin.collections.ArrayList
 
 class DetailActivity : AppCompatActivity() {
     private var cocktailId: String? = ""
+    private var isScrapped = -1 // -1: Unknown, 0: Not scrapped, 1: Scrapped
+
+    private var menu: Menu? = null
+    private var recipeListItemForScrap: RecipeListItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +86,20 @@ class DetailActivity : AppCompatActivity() {
         glass_passage.text = dataRes.glass
         need_recyclerView.adapter = DrinkDetailAdapter(createIngrdList(dataRes, isKorean))
         instruction_passage.text = dataRes.instruction
+
+        // set scrapped info
+        val isScrapped = ScrapManager.isContained(cocktailId!!)
+        recipeListItemForScrap = RecipeListItem(
+            dataRes.thumbnailUrl,
+            dataRes.drinkNameEng,
+            isScrapped,
+            cocktailId!!,
+            dataRes.alcoHolic)
+        menu?.getItem(0)?.setIcon(
+            if (isScrapped) R.drawable.ic_active_
+            else R.drawable.ic_normal_
+        )
+        this.isScrapped = if (isScrapped) 1 else 0
     }
 
     private fun createIngrdList(dataRes: RetrofitCocktailDetailResponse, isKorean: Boolean)
@@ -99,6 +118,7 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.detail, menu)
+        this.menu = menu
         return true
     }
 
@@ -109,6 +129,18 @@ class DetailActivity : AppCompatActivity() {
                 true
             }
             R.id.menu_detail_scrap -> {
+                when(isScrapped) {
+                    0 -> {
+                        isScrapped = 1
+                        recipeListItemForScrap?.let { ScrapManager.addRecipeToScrapList(it) }
+                        menu?.getItem(0)?.setIcon(R.drawable.ic_active_)
+                    }
+                    1 -> {
+                        isScrapped = 0
+                        recipeListItemForScrap?.let { ScrapManager.removeRecipeFromScrapList(it) }
+                        menu?.getItem(0)?.setIcon(R.drawable.ic_normal_)
+                    }
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)

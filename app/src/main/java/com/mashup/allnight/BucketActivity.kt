@@ -32,6 +32,7 @@ class BucketActivity : AppCompatActivity() {
 
             val intent = Intent(this, RecipeListActivity::class.java)
             intent.putExtra("item", items)
+            intent.putExtra(RecipeListActivity.RECIPE_LIST_TYPE_KEY, RecipeListActivity.RECIPE_LIST_TYPE_SEARCH)
             startActivity(intent)
         }
     }

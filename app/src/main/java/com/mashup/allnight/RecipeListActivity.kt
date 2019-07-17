@@ -3,7 +3,6 @@ package com.mashup.allnight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
@@ -22,7 +21,7 @@ import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
 
-class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener {
+class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListener {
 
     private var alcoholMode : RecipeListFilterDialog.Companion.ALCOHOL = RecipeListFilterDialog.Companion.ALCOHOL.ALCOHOL
     private var ingrdCount = 3
@@ -33,6 +32,7 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
     private var isSingleViewMode = true
     private val gridLayoutManager = GridLayoutManager(this, 2)
 
+    private var recipeListType: String = RECIPE_LIST_TYPE_SEARCH
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +56,14 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
         }
 
         init()
-        requestRecipeListData()
+        getRecipeListData()
     }
 
     private fun init() {
+        intent.getStringExtra(RECIPE_LIST_TYPE_KEY)?.let {
+            recipeListType = it
+        }
+
         intent.getStringArrayListExtra("item")?.let {
             for(name: String in it)
                 ingrdSearchList.add(name)
@@ -77,7 +81,14 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
         passItemViewModeToAdapter()
     }
 
-    private fun requestRecipeListData() {
+    private fun getRecipeListData() {
+        when (recipeListType) {
+            RECIPE_LIST_TYPE_SEARCH -> requestRecipeListDataToServer()
+            RECIPE_LIST_TYPE_SCRAP -> getRecipeListDataFromScrapped()
+        }
+    }
+
+    private fun requestRecipeListDataToServer() {
 
         val reqMap = HashMap<String, String>()
         reqMap["offset"] = "0"
@@ -113,7 +124,17 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
     private fun setCocktailListData(dataArr: ArrayList<RetrofitCocktailListResponse>) {
         //val isKorean = Locale.getDefault().language.startsWith("ko")
         val list = ArrayList<RecipeListItem>()
+        val scrappedList = App.prefs.getScrappedRecipeListFromPref()
         for(dataRes: RetrofitCocktailListResponse in dataArr) {
+            // is scrapped?
+            var isScrapped = false
+            for (item: RecipeListItem in scrappedList) {
+                if (item.id == dataRes.id) {
+                    isScrapped = true
+                    break
+                }
+            }
+
             list.add(RecipeListItem(
                 dataRes.thumbnailUrl,
                 //if (isKorean) dataRes.drinkName else
@@ -126,6 +147,29 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
         (cardView_.adapter as RecipeListAdapter).setData(list)
     }
 
+    private fun getRecipeListDataFromScrapped() {
+        val scrappedList = App.prefs.getScrappedRecipeListFromPref()
+
+        val iterator = scrappedList.iterator()
+        while (iterator.hasNext()) {
+            // filtering alcoholic
+            val savedAlcoholMode = iterator.next().alcoholic
+            when (alcoholMode) {
+                RecipeListFilterDialog.Companion.ALCOHOL.ALCOHOL -> {
+                    if (savedAlcoholMode.toLowerCase() != "alcoholic") iterator.remove()
+                }
+                RecipeListFilterDialog.Companion.ALCOHOL.NON_ALCOHOL -> {
+                    if (savedAlcoholMode.toLowerCase() == "alcoholic") iterator.remove()
+                }
+                RecipeListFilterDialog.Companion.ALCOHOL.ALL -> {/*Keep list*/}
+            }
+        }
+
+        // Todo: 재료 수 조건이 정확히 뭐지. 일치인지 아니면 이상인지 아니면 이하인지..
+
+        (cardView_.adapter as RecipeListAdapter).setData(scrappedList)
+    }
+
     private fun passItemViewModeToAdapter() {
         (cardView_.adapter as RecipeListAdapter).isSingleItemViewMode = isSingleViewMode
         cardView_.adapter?.notifyDataSetChanged()
@@ -134,11 +178,17 @@ class RecipeListActivity : AppCompatActivity(),IRecipeListFilterModifiedListener
     override fun onFilterModified(alcohol: RecipeListFilterDialog.Companion.ALCOHOL, ingrdCount: Int) {
         this.alcoholMode = alcohol
         this.ingrdCount = ingrdCount
-        requestRecipeListData()
+        getRecipeListData()
     }
 
     private fun showErrorToast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
+
+    companion object {
+        const val RECIPE_LIST_TYPE_KEY = "recipe_list_type"
+        const val RECIPE_LIST_TYPE_SEARCH = "search"
+        const val RECIPE_LIST_TYPE_SCRAP = "scrap"
     }
 
 }

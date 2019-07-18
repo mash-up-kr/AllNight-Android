@@ -139,7 +139,7 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
                 dataRes.thumbnailUrl,
                 //if (isKorean) dataRes.drinkName else
                 dataRes.drinkNameEng,
-                false,
+                isScrapped,
                 dataRes.id,
                 dataRes.alcoHolic))
         }

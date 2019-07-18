@@ -15,9 +15,14 @@ class MySharedPreferences(context: Context) {
     fun getScrappedRecipeListFromPref(): ArrayList<RecipeListItem>{
         var gson = Gson()
         var json: String = prefs.getString(PREF_KEY_MY_SCRAP, "")!!
-        val type = object : TypeToken<ArrayList<RecipeListItem>>() {}.type
-        var items: ArrayList<RecipeListItem> = gson.fromJson(json, type)
-
+        var items: ArrayList<RecipeListItem>
+        if(json.isEmpty()){
+            items = arrayListOf()
+        }
+        else{
+            val type = object : TypeToken<ArrayList<RecipeListItem>>() {}.type
+            items = gson.fromJson(json, type)
+        }
         for(item: RecipeListItem in items)
             item.scraped = true
 

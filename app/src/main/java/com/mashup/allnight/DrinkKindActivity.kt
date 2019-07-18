@@ -29,15 +29,7 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
         search_item_recyclerview.adapter = adapter
         search_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
-        //var ckList: ArrayList<DataList> = arrayListOf()
         next_button.setOnClickListener{
-            /*ckList.clear()
-            for(i in 0 until adapter.getItemCount()){
-                if(adapter.getItem(i).checked){
-                    ckList.add(adapter.getItem(i))
-                }
-            }*/
-
             val nextIntent = Intent(this, BucketActivity::class.java)
             nextIntent.putExtra("checked", checkedList)
             startActivity(nextIntent)
@@ -63,6 +55,10 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
                     }
 
                     (search_item_recyclerview.adapter as SearchResultAdapter).setItemList(itemList)
+                    if(checkedList.size > 0)
+                        next_button.isEnabled = true
+                    else
+                        next_button.isEnabled = false
                 }
 
             })

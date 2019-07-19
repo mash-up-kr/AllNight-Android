@@ -9,7 +9,8 @@ import com.mashup.allnight.dataclass.RecipeListItem
 class MySharedPreferences(context: Context) {
     val PREFS_FILENAME = "prefs"
     val PREF_KEY_MY_SCRAP = "scrap"
-    val PREF_KEY_LEAD_OFF = "leadOff"
+    private val PREF_KEY_LEAD_OFF = "leadOff"
+    
     val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, 0)
     val editor: SharedPreferences.Editor = prefs.edit()
 

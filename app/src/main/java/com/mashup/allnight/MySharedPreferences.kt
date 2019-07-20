@@ -42,6 +42,8 @@ class MySharedPreferences(context: Context) {
         // 사용자 어플리케이션 최초 실행 - user leadoff
         // return : 최초실행 : true, 이전접속O : false
         var leadOff: Boolean = prefs.getBoolean(PREF_KEY_LEAD_OFF, true)
+
+        return leadOff
     }
 
     fun setUserLeadOff(value: Boolean){

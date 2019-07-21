@@ -32,4 +32,9 @@ interface IRetrofitApi {
         // no variable
     ) : Call<RetrofitCocktailScrapResponse>
 
+    @GET("api/v1/search/cocktail/static")
+    fun getCockTailMainList(
+        // no variagble
+    ) : Call<ArrayList<RetrofitCocktailListResponse>>
+
 }

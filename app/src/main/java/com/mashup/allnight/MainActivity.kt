@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.navigation.NavigationView
@@ -24,7 +25,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         initMain()
     }
 
+    private fun forNewRegistered(){
+        //신규유저 Login2Activity로 이동
+        val intent = Intent(this, Login2Activity::class.java)
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY) // NO_HISTORY 안함
+        startActivity(intent)
+    }
     private fun initMain() {
+
+        val pref = this.getSharedPreferences("prefs",0)
+
+        if(pref.getBoolean("leadOff", true)){
+            forNewRegistered()
+        }
 
         // add temporary items
         val arrList = ArrayList<MainListItem>()

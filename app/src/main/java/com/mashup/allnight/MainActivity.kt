@@ -33,7 +33,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         requestMainList()
     }
 
+    private fun forNewRegistered(){
+        //신규유저 Login2Activity로 이동
+        val intent = Intent(this, Login2Activity::class.java)
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY) // NO_HISTORY 안함
+        startActivity(intent)
+    }
     private fun initMain() {
+
+        val pref = this.getSharedPreferences("prefs",0)
+
+        if(pref.getBoolean("leadOff", true)){
+            forNewRegistered()
+        }
 
         // add temporary items
         val arrList = arrayListOf<MainListItem>()

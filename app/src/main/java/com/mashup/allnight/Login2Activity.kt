@@ -11,17 +11,19 @@ class Login2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login2)
 
+        val pref = this.getSharedPreferences("prefs",0)
+
         yes_button.setOnClickListener{
             val intent = Intent(this,DrinkKindActivity::class.java)
             startActivity(intent)
         }
 
         no_button.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            // 이전화면으로 돌아가지않도록 설정함
-            startActivity(intent)
+            pref.edit().putBoolean("leadOff", false).commit()
+            finish()
         }
+
+        // 로그인액티비티도 그냥 시작하기 뉴르면 메인 띄우고 바로 피니시로 날려버려 메인에서 백키누르면 종료
     }
 }
+    

@@ -40,6 +40,9 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
 
         BtnToHome_.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
+            val pref = this.getSharedPreferences("prefs",0)
+
+            pref.edit().putBoolean("leadOff", false).commit()
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }

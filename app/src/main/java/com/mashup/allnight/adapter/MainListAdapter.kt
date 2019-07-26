@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mashup.allnight.DetailActivity
 import com.mashup.allnight.dataclass.MainListItem
 import com.mashup.allnight.R
+import com.mashup.allnight.ScrapManager
+import com.mashup.allnight.dataclass.RecipeListItem
 import com.mashup.allnight.viewholder.MainListViewHolder
 import kotlinx.android.synthetic.main.main_list_today_item.view.*
 
@@ -46,6 +48,16 @@ class MainListAdapter(private var itemList: ArrayList<MainListItem>) : RecyclerV
         }
         holder.itemView.BtnScrap?.setOnCheckedChangeListener { p0, checked ->
             itemList[position].scraped = checked
+
+            val itemToSave = RecipeListItem(itemList[position].imageUrl,
+                                            itemList[position].title,
+                                            itemList[position].scraped,
+                                            itemList[position].id,
+                                            itemList[position].alcoholic)
+            if(checked)
+                ScrapManager.addRecipeToScrapList(itemToSave)
+            else
+                ScrapManager.removeRecipeFromScrapList(itemToSave)
         }
         holder.bind(itemList[position])
     }

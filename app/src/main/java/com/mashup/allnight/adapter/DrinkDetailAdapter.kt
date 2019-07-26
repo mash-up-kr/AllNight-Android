@@ -18,7 +18,7 @@ class DrinkDetailAdapter(private var items: ArrayList<DrinkNeedSpecific>): Recyc
         items[position].let{item ->
             with(holder) {
                 ingredient.text = item.ingredient
-                size.text = item.size.toString() + "oz"
+                size.text = item.measure
 
             }
         }

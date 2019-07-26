@@ -1,6 +1,5 @@
 package com.mashup.allnight
 
-import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -82,10 +81,10 @@ class DetailActivity : AppCompatActivity() {
         ivDetailTitleImage.imgUrl = dataRes.thumbnailUrl
         tvDetailTitle.text = /*if (isKorean) dataRes.drinkName else*/ dataRes.drinkNameEng
         tvAlcoholic.text = dataRes.alcoHolic
-        intro_passage.text = "" // 엥 이거 서버리스폰스에 없음 뭐지
-        glass_passage.text = dataRes.glass
+        //intro_passage.text = "" // 엥 이거 서버리스폰스에 없음 뭐지
+        glass_passage.text = if (isKorean) dataRes.glass else dataRes.glassEng
         need_recyclerView.adapter = DrinkDetailAdapter(createIngrdList(dataRes, isKorean))
-        instruction_passage.text = dataRes.instruction
+        instruction_passage.text = if (isKorean) dataRes.instruction else dataRes.instructionEng
 
         // set scrapped info
         val isScrapped = ScrapManager.isContained(cocktailId!!)
@@ -106,11 +105,15 @@ class DetailActivity : AppCompatActivity() {
             : ArrayList<DrinkNeedSpecific> {
         val list = ArrayList<DrinkNeedSpecific>()
         for (i in 0 until dataRes.ingredients.size) {
-            list.add(
-                DrinkNeedSpecific(
-                    if (isKorean) dataRes.ingredients[i]
-                    else dataRes.ingredientsEng[i],
-                dataRes.measures[i].toInt()))
+            val ingrd = if (isKorean) dataRes.ingredients[i] else dataRes.ingredientsEng[i]
+            val mes =
+                when {
+                    isKorean and (dataRes.measure.size > i) -> dataRes.measure[i]
+                    !isKorean and (dataRes.measureEng.size > i) -> dataRes.measureEng[i]
+                    else -> "-"
+                }
+
+            list.add(DrinkNeedSpecific(ingrd, mes))
         }
 
         return list

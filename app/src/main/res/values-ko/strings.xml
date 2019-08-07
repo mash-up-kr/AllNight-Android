@@ -18,4 +18,8 @@
     <string name="favorite">스크랩</string>
     <string name="start">시작하기</string>
     <string name="filter_number_of_ingredients">재료 수</string>
+    <string name="show_alcoholic_title">알콜 칵테일을 기본으로 보이기</string>
+    <string name="show_non_alcohol_title">무알콜 칵테일을 기본으로 보이기</string>
+    <string name="title_activity_settings">설정</string>
+    <string name="alcoholic_header">알코올 설정</string>
 </resources>

@@ -142,6 +142,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 intent.putExtra(RecipeListActivity.RECIPE_LIST_TYPE_KEY, RecipeListActivity.RECIPE_LIST_TYPE_SCRAP)
                 startActivity(intent)
             }
+            R.id.mnuSetting -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                startActivity(intent)
+            }
         }
         return true
     }

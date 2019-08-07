@@ -17,4 +17,12 @@
     <string name="favorite">Scrap</string>
     <string name="start">Start</string>
     <string name="filter_number_of_ingredients">Number of\ningredients</string>
+
+    <string name="title_activity_settings">Settings</string>
+    <!-- Preference Titles -->
+    <string name="alcoholic_header">Alcoholic default</string>
+    <!-- Messages Preferences -->
+    <string name="show_alcoholic_title">Show alcoholic default</string>
+    <string name="show_non_alcohol_title">Show non-alcoholic default</string>
+
 </resources>

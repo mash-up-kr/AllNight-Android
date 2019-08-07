@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mashup.allnight.adapter.RecipeListAdapter
 import com.mashup.allnight.customview.RecipeListFilterDialog
@@ -63,6 +64,14 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
     }
 
     private fun init() {
+
+        // set checkbox as default setting
+        val defAlcohol = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("show_alcohol", true)
+        val defNonAlcohol = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("show_non_alcohol", true)
+        if (defAlcohol && defNonAlcohol) alcoholMode = RecipeListFilterDialog.Companion.ALCOHOL.ALL
+        else if (defAlcohol && !defNonAlcohol) alcoholMode = RecipeListFilterDialog.Companion.ALCOHOL.ALCOHOL
+        else if (!defAlcohol && defNonAlcohol) alcoholMode = RecipeListFilterDialog.Companion.ALCOHOL.NON_ALCOHOL
+
         intent.getStringExtra(RECIPE_LIST_TYPE_KEY)?.let {
             recipeListType = it
         }

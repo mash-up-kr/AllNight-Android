@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.*
 import android.widget.Checkable
 import androidx.core.view.children
+import androidx.preference.PreferenceManager
 import com.mashup.allnight.IRecipeListFilterModifiedListener
 import com.mashup.allnight.R
 import kotlinx.android.synthetic.main.dialog_recipe_list_filter.*

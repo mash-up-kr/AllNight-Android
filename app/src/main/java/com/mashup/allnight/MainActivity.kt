@@ -1,6 +1,8 @@
 package com.mashup.allnight
 
+import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +23,14 @@ import kotlinx.android.synthetic.main.main_nav_header.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.text.util.Linkify
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.widget.TextView
+
+
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var mainAdapter: MainListAdapter
@@ -146,6 +156,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val intent = Intent(this, SettingsActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
                 startActivity(intent)
+            }
+            R.id.mnuComplain ->{
+                val gotoPlay = SpannableString("http://play.google.com/store/apps/details?id=com.mashup.allnight")
+                Linkify.addLinks(gotoPlay, Linkify.ALL)
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(R.string.alert_dialog_title).setMessage(gotoPlay)
+                builder.setPositiveButton(R.string.alert_dialog_ok) {dialog, id ->
+                }
+                val alertDialog = builder.create()
+                alertDialog.show()
+
+                (alertDialog.findViewById(android.R.id.message) as TextView).movementMethod = LinkMovementMethod.getInstance()
             }
         }
         return true

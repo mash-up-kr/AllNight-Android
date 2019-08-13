@@ -22,4 +22,7 @@
     <string name="show_non_alcohol_title">무알콜 칵테일을 기본으로 보이기</string>
     <string name="title_activity_settings">설정</string>
     <string name="alcoholic_header">알코올 설정</string>
+    <string name="alert_dialog_title">문의</string>
+    <string name="alert_dialog_message">Google Play에 문의(리뷰)를 남겨주세요.</string>
+    <string name="alert_dialog_ok">확인</string>
 </resources>

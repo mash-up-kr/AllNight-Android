@@ -25,4 +25,7 @@
     <string name="show_alcoholic_title">Show alcoholic default</string>
     <string name="show_non_alcohol_title">Show non-alcoholic default</string>
 
+    <string name="alert_dialog_title">Inquiry</string>
+    <string name="alert_dialog_message">Please leave a review on Google Play.</string>
+    <string name="alert_dialog_ok">Ok</string>
 </resources>

@@ -7,8 +7,8 @@
     <string name="filter_alcohol_only">알콜</string>
     <string name="filter_apply">적용</string>
     <string name="first_page_description">재료를 선택해서 레시피를 찾아보시겠어요?</string>
-    <string name="first_page_no_thanks">아니요, 다음에 할래요</string>
-    <string name="first_page_yes_please">네, 해볼래요</string>
+    <string name="first_page_no_thanks">홈으로 그냥 갈래요</string>
+    <string name="first_page_yes_please">네, 받아볼래요</string>
     <string name="search_ingredients_hint">ex) 보드카</string>
     <string name="settings">설정</string>
     <string name="social_login">소셜 미디어로 로그인</string>
@@ -25,4 +25,7 @@
     <string name="alert_dialog_title">문의</string>
     <string name="alert_dialog_message">Google Play에 문의(리뷰)를 남겨주세요.</string>
     <string name="alert_dialog_ok">확인</string>
+    <string name="bucket_title">장바구니</string>
+    <string name="find_recipe">레시피 찾아보기</string>
+    <string name="search_results">레시피 검색결과</string>
 </resources>

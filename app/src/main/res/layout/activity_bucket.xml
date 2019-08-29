@@ -26,7 +26,8 @@
             android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" android:id="@+id/bucket_item_recyclerview"/>
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" android:id="@+id/bucket_item_recyclerview"
+            android:layout_marginBottom="51dp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="170dp"
@@ -34,4 +35,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:background="@drawable/img_bucket"/>
+    <TextView
+            android:text="@string/bucket_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/bucket_title"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp" android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/nanumbarungothic"/>
+    <Button
+            android:text="@string/find_recipe"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/bucket_search_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bucket_item_recyclerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:textColor="#000000" android:textSize="16sp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:background="#d3ba91"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

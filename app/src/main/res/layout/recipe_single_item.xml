@@ -20,19 +20,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradation_black_to_bottom" />
+
     <CheckBox
             android:id="@+id/BtnScrap"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_normal"
-            android:scaleType="center"
             android:button="@drawable/myscrap"
+            android:scaleType="center"
+            android:src="@drawable/ic_normal"
             apps:layout_constraintEnd_toEndOf="parent"
-            apps:layout_constraintTop_toTopOf="parent"
-    />
+            apps:layout_constraintTop_toTopOf="parent" />
     <LinearLayout android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:gravity="center_vertical"

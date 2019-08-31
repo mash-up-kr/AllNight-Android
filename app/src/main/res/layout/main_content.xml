@@ -43,10 +43,10 @@
 
             <ImageView
                     android:id="@+id/ivOpenDrawer"
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:background="@drawable/ic_normal"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_normal" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,12 +48,11 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
-        var i = 0
+
         BtnSwitchViewMode.setOnClickListener{
             isSingleViewMode = !isSingleViewMode
             passItemViewModeToAdapter()
-            i=1-i
-            if(i==0)
+            if(isSingleViewMode)
                 BtnSwitchViewMode.setImageResource(R.drawable.ic_more)
             else
                 BtnSwitchViewMode.setImageResource(R.drawable.ic_single_view_24_normal)

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.GridLayoutManager
@@ -51,6 +52,10 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
         BtnSwitchViewMode.setOnClickListener{
             isSingleViewMode = !isSingleViewMode
             passItemViewModeToAdapter()
+            if(isSingleViewMode)
+                BtnSwitchViewMode.setImageResource(R.drawable.ic_more)
+            else
+                BtnSwitchViewMode.setImageResource(R.drawable.ic_single_view_24_normal)
         }
 
         BtnFilter.setOnClickListener {
@@ -101,6 +106,7 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
     }
 
     private fun requestRecipeListDataToServer() {
+        result_recipe_title.setVisibility(View.VISIBLE)
 
         val reqMap = HashMap<String, String>()
         reqMap["offset"] = "0"
@@ -160,6 +166,8 @@ class RecipeListActivity : AppCompatActivity(), IRecipeListFilterModifiedListene
     }
 
     private fun getRecipeListDataFromScrapped() {
+        result_recipe_title.setVisibility(View.INVISIBLE)
+        
         val scrappedList = App.prefs.getScrappedRecipeListFromPref()
 
         val iterator = scrappedList.iterator()

@@ -12,13 +12,16 @@
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
                android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
+
     <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="175dp"
-            android:layout_height="26dp" app:srcCompat="@drawable/ic_textimg" android:id="@+id/imageView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="46dp" app:layout_constraintTop_toTopOf="@+id/tvMainTodayTitle"
-            android:layout_marginStart="125dp"/>
+            android:layout_height="26dp"
+            android:layout_marginTop="46dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvMainTodayTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvMainTodayTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvMainTodayTitle"
+            app:srcCompat="@drawable/ic_textimg" />
     <TextView
             android:text="Recipe"
             android:layout_width="0dp"

@@ -16,13 +16,15 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/nanumbarungothic"/>/>
+
         <CheckBox
                 android:id="@+id/checkBox"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp" android:button="@drawable/mycheck"/>
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:button="@drawable/mycheck" />
 
 </LinearLayout>

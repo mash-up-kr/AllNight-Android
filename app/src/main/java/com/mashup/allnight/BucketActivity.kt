@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mashup.allnight.adapter.BucketItemAdapter
 import com.mashup.allnight.dataclass.DataList
 import kotlinx.android.synthetic.main.activity_bucket.*
-import kotlinx.android.synthetic.main.bucket_item.*
 
 class BucketActivity : AppCompatActivity() {
 
@@ -24,7 +23,7 @@ class BucketActivity : AppCompatActivity() {
             finish()
         }
 
-        next_button_bucket.setOnClickListener{
+        bucket_search_button.setOnClickListener{
             val items: ArrayList<String> = arrayListOf()
             for(i in 0 until adapter.getItemList().size) {
                 items.add(adapter.getItemList()[i].name)

@@ -26,7 +26,7 @@
                 app:title="@string/show_alcoholic_title"
                 app:switchTextOff="OFF"
                 app:switchTextOn="ON"
-                app:iconSpaceReserved="false"/>
+                app:iconSpaceReserved="false" />
         <SwitchPreference
                 app:defaultValue="true"
                 app:key="show_non_alcohol"

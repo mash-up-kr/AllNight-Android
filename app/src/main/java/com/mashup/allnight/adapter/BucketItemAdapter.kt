@@ -26,6 +26,7 @@ class BucketItemAdapter (private var itemList : MutableList<DataList>):RecyclerV
 
     override fun onBindViewHolder(holder: BucketItemViewHolder, position: Int) {
         holder.itemView.delete_button.setOnClickListener{
+            itemList[position].checked = false
             itemList.remove(itemList[position])
             notifyDataSetChanged()
         }
@@ -34,5 +35,14 @@ class BucketItemAdapter (private var itemList : MutableList<DataList>):RecyclerV
 
     fun getItemList(): MutableList<DataList> {
         return itemList
+    }
+
+    fun getItemNameList(): ArrayList<DataList>{
+        var itemNameList: ArrayList<DataList> = arrayListOf()
+        var size = getItemCount()
+        for(i in 0 until size){
+            itemNameList.add(itemList[i])
+        }
+        return itemNameList
     }
 }

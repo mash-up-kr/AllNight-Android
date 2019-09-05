@@ -23,6 +23,8 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_kind)
 
+        checkedList = initItemDataFromBucket(initBooleanData())
+
         next_button.isEnabled = false
 
         val adapter = SearchResultAdapter(arrayListOf(), this)
@@ -109,5 +111,19 @@ class DrinkKindActivity : ISearchResultItemCheckedListener, AppCompatActivity() 
         }
         else
             checkedList.removeAll { dataList -> data.name == dataList.name }
+    }
+
+    fun initItemDataFromBucket(bucket: Boolean): ArrayList<DataList> {
+        if(bucket){
+            val list = intent.getSerializableExtra("bucket_item") as ArrayList<DataList>?
+            if (list is ArrayList<DataList>)
+                return list
+        }
+        return arrayListOf()
+    }
+
+    fun initBooleanData(): Boolean {
+        var fromBucket = intent.getBooleanExtra("bucket", true)
+        return fromBucket
     }
 }

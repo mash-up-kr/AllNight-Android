@@ -20,10 +20,16 @@ class BucketActivity : AppCompatActivity() {
         bucket_item_recyclerview.layoutManager = LinearLayoutManager(this)
 
         back_button_bucket.setOnClickListener{
-            finish()
+            var nameList = adapter.getItemNameList()
+            val backIntent = Intent(this, DrinkKindActivity::class.java)
+            backIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            backIntent.putExtra("bucket_item", nameList)
+            backIntent.putExtra("bucket", true)
+            startActivity(backIntent)
         }
 
         bucket_search_button.setOnClickListener{
+
             val items: ArrayList<String> = arrayListOf()
             for(i in 0 until adapter.getItemList().size) {
                 items.add(adapter.getItemList()[i].name)

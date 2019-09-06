@@ -15,6 +15,7 @@ class Login2Activity : AppCompatActivity() {
 
         yes_button.setOnClickListener{
             val intent = Intent(this,DrinkKindActivity::class.java)
+            intent.putExtra("bucket", false)
             startActivity(intent)
         }
 

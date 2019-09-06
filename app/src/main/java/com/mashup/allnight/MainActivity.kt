@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // set fab listener
         fabSearch.setOnClickListener {
             val intent = Intent(this, DrinkKindActivity::class.java)
+            intent.putExtra("bucket", false)
             startActivity(intent)
         }
     }
